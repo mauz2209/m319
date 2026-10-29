@@ -1,0 +1,25 @@
+/*imperative program*/void main() {
+	treppenStufe(5);
+	nimm();
+}
+
+void rechtsUm(){
+	linksUm();
+   	linksUm();
+    linksUm();
+}
+    
+void walk(int max){
+	for (int i = 0; i < max; i = i + 1){
+   		vor();
+    }
+}
+
+void treppenStufe(int max){
+	for (int i = 0; i < max; i = i + 1){
+		linksUm();
+		walk(1);
+		rechtsUm();
+   		walk(1);
+   	}
+}

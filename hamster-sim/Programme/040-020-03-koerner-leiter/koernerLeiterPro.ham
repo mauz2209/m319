@@ -1,0 +1,8 @@
+/*object-oriented program*/void main() {
+    Hamster otto1 = new Hamster(1, 13, 1, 0, Hamster.RED);
+    Hamster otto2 = new Hamster(4, 10, 1, 0, Hamster.GREEN);
+    Hamster otto3 = new Hamster(7, 7, 1, 0, Hamster.GREEN);
+    Hamster otto4 = new Hamster(10, 4, 1, 0, Hamster.GREEN);
+    Hamster otto5 = new Hamster(12, 2, 1, 0, Hamster.GREEN);
+}
+

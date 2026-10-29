@@ -1,0 +1,57 @@
+/*imperative program*/void main() {
+    walkInDirection();
+}
+
+void rechtsUm(){
+	linksUm();
+   	linksUm();
+    linksUm();
+}
+    
+void walk(int max){
+	for (int i = 0; i < max; i++){
+   		if(vornFrei()){
+   			vor();
+   		}
+   	}
+}
+
+void kehrt(){
+	linksUm();
+	linksUm();
+}
+
+void gibAlle(){
+	while (maulLeer() != true){
+		gib();
+	}
+} 
+
+boolean checkIfEven(){
+	boolean even = false;
+	int count = 0;
+	while (kornDa()){
+		nimm();
+		count++;
+	}
+	if (count % 2 == 0){
+		even = true;
+	}
+	return even;
+}	
+
+void walkInDirection(){
+	if (checkIfEven()){
+		kehrt();
+		while(vornFrei()){
+			walk(1);
+		}
+		gibAlle();
+	}
+	else{
+		while(vornFrei()){
+			walk(1);
+		}
+		gibAlle();
+	}
+}		

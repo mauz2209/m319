@@ -1,0 +1,5 @@
+/*object-oriented program*/void main() {
+    SuperHamster otto = new SuperHamster(1, 1, 1, 0);
+    otto.vor();
+    otto.rechtsUm();
+}

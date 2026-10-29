@@ -1,0 +1,48 @@
+/*imperative program*/void main() {
+walk(1);
+checkIfCorn();
+checkIfCorn();
+checkIfCorn();
+checkIfCorn();
+
+}
+void rechtsUm(){
+	linksUm();
+   	linksUm();
+    linksUm();
+}
+    
+void walk(int max){
+	for (int i = 0; i < max; i = i + 1){
+   		vor();
+    }
+}
+
+void linksUmgehen(){
+	linksUm();
+	walk(1);
+	rechtsUm();
+	walk(2);
+	rechtsUm();
+	walk(1);
+	linksUm();
+}
+
+void rechtsUmgehen(){
+	rechtsUm();
+	walk(1);
+	linksUm();
+	walk(2);
+	linksUm();
+	walk(1);
+	rechtsUm();
+}    
+
+void checkIfCorn(){
+	if (kornDa()){
+		linksUmgehen();
+	}
+	else{
+		rechtsUmgehen();
+	}
+}

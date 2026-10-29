@@ -1,0 +1,45 @@
+/*imperative program*/void main() {
+	checkRows(10, 10);
+}
+void rechtsUm(){
+	linksUm();
+   	linksUm();
+    linksUm();
+}
+    
+void walk(int max){
+	for (int i = 0; i < max; i++){
+   		if(vornFrei()){
+   			vor();
+   		}
+   	}
+}
+void nimmAlle(){
+	while(kornDa()){
+		nimm();
+	}
+}
+
+void nextRow(){
+	rechtsUm();
+	walk(1);
+	rechtsUm();
+	walk(10);
+	kehrt();
+}
+
+void kehrt(){
+	linksUm();
+	linksUm();
+}
+
+void checkRows(int höhe, int breite){
+	for (int i = 0; i < höhe; i++){
+		for (int a = 1; a < breite; a++){
+			nimmAlle();
+			walk(1);
+		}
+		nimmAlle();
+		nextRow();
+	}
+}

@@ -1,0 +1,9 @@
+/*object-oriented program*/void main() {
+    Hamster otto1 = new Hamster();
+    otto1.init(1, 1, 1, 0);
+    Hamster fritz = new Hamster();
+    fritz.init(2, 1, 1, 0);
+    Hamster otto2 = new Hamster(fritz); 
+    Hamster otto3 = new Hamster(3, 1, 1, 0);
+    Hamster otto4 = new Hamster(4, 1, 1, 0, Hamster.BLUE);
+}

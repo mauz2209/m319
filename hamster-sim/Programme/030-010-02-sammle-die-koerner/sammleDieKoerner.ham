@@ -1,0 +1,37 @@
+/*imperative program*/void main() {
+	walk(2);
+	nimm();
+	walk(5);
+	rechtsUm();
+	walk(2);
+	rechtsUm();
+	walk(3);
+	nimm();
+	walk(4);
+	linksUm();
+	walk(2);
+	linksUm();
+	walk(1);
+	nimm();
+	walk(6);
+	nimm();
+	geben(4);
+}
+void rechtsUm(){
+	linksUm();
+   	linksUm();
+    linksUm();
+}
+    
+void walk(int max){
+	for (int i = 0; i < max; i = i + 1){
+   		vor();
+    }
+}    
+
+void geben(int max){
+	for (int i = 0; i < max; i = i + 1){
+   		gib();
+    }
+} 
+

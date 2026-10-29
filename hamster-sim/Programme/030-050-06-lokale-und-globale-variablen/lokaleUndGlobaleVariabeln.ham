@@ -1,0 +1,29 @@
+/*imperative program*/void main() {
+    zaehleHaufen();
+    walk(anzahl);   
+}
+
+/*es funktioniert nicht wegen sogenannten scopes"{}".
+wenn eine Variabel in einem Scope definiert wird lebt sie nur dort.
+Dass heisst wenn man anzahl im Scope von zaehleHaufen() definiert lebt sie nur dort.
+Wenn man aber trotzdem auf die Variabel zugreifen will muss die Methode eine Methode
+mit Rückgabewert sein.*/
+
+int gesamtKoerner = 0;
+
+void zaehleHaufen() {
+    int anzahl = 0;
+
+    while (kornDa()) {
+        nimm();
+        anzahl = anzahl + 1;
+    }
+}
+
+void walk(int max){
+	for (int i = 0; i < max; i++){
+   		if(vornFrei()){
+   			vor();
+   		}
+   	}
+}

@@ -1,0 +1,18 @@
+{
+    // Kein Sync-Button
+    "scm.showActionButton": false,
+  
+    // Nichts passiert "von alleine"
+    "git.autofetch": false,
+  
+    // Pull soll keine Merge-Commits erzeugen
+    // (bricht ab, wenn kein Fast-Forward moeglich)
+    "git.pullff": "only",
+  
+    // Sicherheit: Force Push bestaetigen
+    "git.confirmForcePush": true,
+  
+    // Kein Smart-Commit (bewusst committen)
+    "git.enableSmartCommit": false
+  }
+  

@@ -1,0 +1,10 @@
+/*class*/class SuperHamster extends Hamster {
+    SuperHamster(int r, int s, int d, int k){
+    	super(r, s, d, k);
+    }
+    void rechtsUm(){
+    	linksUm();
+    	linksUm();
+    	linksUm();
+    }
+}

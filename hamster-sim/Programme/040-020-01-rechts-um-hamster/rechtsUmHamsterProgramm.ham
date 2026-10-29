@@ -1,0 +1,7 @@
+/*object-oriented program*/void main() {
+    RechtsUmHamster hamster = new RechtsUmHamster();
+    hamster.init(1, 1, 1, 0);
+    hamster.vor();
+	hamster.rechtsUm();
+	hamster.vor();
+}

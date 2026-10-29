@@ -1,0 +1,3772 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Modul 319 - Applikationen entwerfen und implementieren</title>
+	<meta name="author" content="Silvio Kohler">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://studentsportal2026.z6.web.core.windows.net/dist/reset.css">
+	<link rel="stylesheet" href="https://studentsportal2026.z6.web.core.windows.net/dist/reveal.css">
+	<link rel="stylesheet" href="https://studentsportal2026.z6.web.core.windows.net/dist/theme/simple.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="https://studentsportal2026.z6.web.core.windows.net/plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="title-slide">
+				<h1>Modul 319</h1>
+				<h2>Applikationen entwerfen und implementieren</h2>
+				<p>Silvio Kohler</p>
+				<p>19.08.2026</p>
+			</section>
+			<section id="toc">
+				<h1>Inhaltsverzeichnis</h1>
+			</section>
+			<section>
+				<section id="organisatorisches">
+					<h1>Organisatorisches</h1>
+				</section>
+				<section id="arbeitsplatz">
+					<h2>Arbeitsplatz</h2>
+					<ul>
+						<li><b>Docking-Station inkl. Peripherie</b> - Diese darf und soll genutzt werden - <u>muss</u>
+							aber durch Sie wieder aufgeräumt werden.</li>
+						<li><b>Netzwerk</b> - Als Informatik-Lernender dürfen Sie das Netz <em>vogelfrei</em> verwenden.
+							Dazu nutzen Sie die Docking-Station auf ihrem Tisch. Diese ist an <em>vogelfrei</em> angeschlossen.</li>
+						<li><b>Teams</b> - Ist die Kommunikationsplattform der GBC: Chat, Dokumente, Umfragen, Prüfungen
+							etc.<br>Das Klassen-Team in Teams ist auch der Einstiegspunkt für ihre Module bei mir.</li>
+							<li>Unsere zentrale Ablage ist aber <em>codevogel.ch</em>.</li>
+					</ul>
+				</section>
+				<section id="rules1">
+					<h2>Regeln</h2>
+					<h3>Scope & Focus</h3>
+					<ul>
+						<li>Während des Unterrichts dürfen keine Geräte verwendet werden, die nicht für den Unterricht
+							notwendig (oder sinnvoll) sind. Der Fokus liegt ganz beim Unterricht. Andere Tätigkeiten
+							(Social Media, Chat) sind nicht erlaubt.</li>
+						<li>Der Laptop und das Handy dürfen auf dem Tisch bleiben. Beides darf nur verwendet werden,
+							wenn es dem Unterricht dient. Ansonsten: Laptop zugeklappt, Handy umgedreht.</li>
+						<li>Toilette, Trinken und andere persönliche Bedürfnisse während der Pause. Dringende Fälle
+							möglichst ohne Störung des Unterrichts.
+						</li>
+					</ul>
+				</section>
+				<section id="rules2">
+					<h2>Regeln</h2>
+					<h3>Communication</h3>
+					<ul>
+						<li>Zuhören hat vor dem Sprechen Priorität. Sie kennen natürlich die Ausnahmen (z.B. eine
+							Präsentation!).
+						</li>
+						<li>Pro Gruppe (Klasse, Arbeitsgruppe, Tandem) spricht maximal eine Person gleichzeitig. Die
+							anderen hören zu.</li>
+						<li>Kopfbedeckungen, Sonnenbrillen und Headsets stören die Kommunikation und sind
+							deshalb während des Unterrichts nicht erlaubt (auch hier gibt es Ausnahmen).</li>
+					</ul>
+				</section>
+				<section id="rules3">
+					<h2>Regeln</h2>
+					<h3>Artificial Intelligence</h3>
+					<ul>
+						<li>Im Unterricht gilt: KI darf uns Aufgaben abnehmen, die <u>wir selbst bereits
+								beherrschen</u>. Das
+							kritische und kreative Denken ist und bleibt unsere Sache und wird im Unterricht trainiert.
+						</li>
+						<li>Grundsätzlich gilt: KI darf nur auf Anweisung der LP benutzt werden. Bei Unsicherheit:
+							Fragen sie zuerst nach.
+						</li>
+					</ul>
+				</section>
+				<section id="ablauf">
+					<h2>Ablauf</h2>
+					<ol>
+						<li>Einführung in das Programmieren und die wichtigsten Konzepte mit dem Hamster-Simulator.</li>
+						<li>Programmieren mit Java, zuerst
+							<ul>
+								<li>prozedural, und dann</li>
+								<li>objektorientiert.</li>
+							</ul>
+						</li>
+						</ul>
+					</ol>
+					<p>Die Leistungsbeurteilung erfolgt durch:</p>
+					<ul>
+						<li>Zwei schriftliche Prüfungen zum Hamster-Simulator (je 30%)</li>
+						<li>Ein Projekt (Entwickeln einer Applikation) mit einer Präsentation (oder Screencast) (40%)
+						</li>
+					</ul>
+					</ul>
+				</section>
+				<section id="ressourcen">
+					<h2>Ressourcen</h2>
+					<ul>
+						<li>Einstiegspunkt mit Links: <em>Teams</em></li>
+						<li>Slides (ihr Guide durch das Modul): <em>Teams -> Slides</em></li>
+						<li><a href="https://codevogel.ch/m319-2026">Unser Projekt in codevogel</a></li>
+						<li>Aufgaben / Tasks: <em>Issue-Board</em></li>
+					</ul>
+				</section>
+				<section id="lehrmittel">
+					<h2>Lehrmittel</h2>
+					<ul>
+						<li>Als Lehrmittel dienen diese Folien, und die Unterlagen auf codevogel.</li>
+						<li>Sie sind frei, weitere Unterlagen zu verwenden. Sprechen Sie sich aber mit der LP ab.</li>
+						<li>Es werden keine weiteren Lehrmittel vorgeschrieben.</li>
+					</ul>
+				</section>
+				<section id="tools">
+					<h2>Tools</h2>
+					<ul>
+						<li><a href="https://www.java-hamster-modell.de/">Hamster-Simulator</a></li>
+						<li>Code-Editor / IDE: VS Code, IntelliJ IDEA</li>
+						<li>Weitere Tools (werden mit den Übungen bekannt gegeben)</li>
+					</ul>
+				</section>
+				<section id="ziele-aus-der-mid">
+					<h2>Ziele aus der MID</h2>
+					<p style="font-weight: bold;"></p>
+					<ul style="font-size: 0.8em;">
+						<li>(Programm-)Abläufe entwickeln und mit einem Struktogramm darstellen</li>
+						<li>Daten richtig speichern und bearbeiten - Datentypen und Datenstrukturen kennen und bewusst
+							einsetzen</li>
+						<li>Komponenten einer Programmiersprache: Variablen/Konstanten, Operatoren, Kontrollstrukturen,
+							Scopes (Gültigkeitsbereich), Funktionen, Klassen/Objekte</li>
+						<li>Entwicklungsumgebung / IDE vs. Laufzeitumgebung, Debugging, Fehlerhandling, Testen</li>
+					</ul>
+				</section>
+				<section id="lernzieleAufgabe">
+					<h2>Lernziele: Auftrag</h2>
+					<table>
+						<tr>
+							<td>Auftrag:</td>
+							<td>Lesen Sie die Lernziele (Handlungsziele) in der <a
+									href="https://www.modulbaukasten.ch/module/319/1/de-DE?title=Applikationen-entwerfen-und-implementieren">Modulidentifikation</a>.
+								Schreiben Sie sich Begriffe, die Sie nicht verstehen, auf.
+								<br>Während des Semesters sollen Sie die Begriffe dieser Liste klären können
+								(Checkliste).
+							</td>
+						</tr>
+						<tr>
+							<td>Form:</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit:</td>
+							<td>10'</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 1 -->
+			<section>
+				<section class="toc" id="b1">
+					<h1>Block 1: Der Hamster-Simulator</h1>
+				</section>
+				<section id="zieleB1">
+					<h2>Block 1: Lernziele</h2>
+					<ul>
+						<li>Ich kann die Umgebung für den Hamster-Simulator auf meinem Laptop einrichten und starten, so
+							dass Aufgaben gelöst werden können.</li>
+						<li>Ich kann den Hamster im Simulator mit einfachen Anweisungen in Form von Java-Code bewegen,
+							indem ich Kontrollstrukturen wie if-then-else und loops nutze.</li>
+					</ul>
+				</section>
+				<section id="ablaufB1">
+					<h2>Block 1: Ablauf</h2>
+					<ul>
+						<li>Installation Hamster-Simulator</li>
+						<li>Übung: Hamster im Simulator bewegen</li>
+						<li>Übung: Statusabfragen</li>
+						<li>Übung: Kontrollstrukturen</li>
+					</ul>
+				</section>
+				<section id="DefinitionProgrammieren">
+					<h2>Was ist <b>programmieren</b>?</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Auftrag</td>
+							<td>Finden Sie <b>ohne Hilfsmittel</b> eine Definition des Begriffs <b>programmieren</b> und
+								posten Sie diese in Teams.</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>5'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="EntwicklungsLaufzeitumgebung">
+					<h2>Entwicklungs- und Laufzeitumgebung</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td></td>
+							<td></td>
+							<td><em>Beispiel Java</em></td>
+						</tr>
+						<tr>
+							<td><b>Entwicklungsumgebung</b></td>
+							<td>Das Programm, in welchem ein Softwareentwickler Programme schreibt.</td>
+							<td>Eclipse, IntelliJ IDEA</td>
+						</tr>
+						<tr>
+							<td><b>Laufzeitumgebung</b></td>
+							<td>Die Umgebung, in der ein Programm ausgeführt wird.</td>
+							<td>Java Virtual Machine (JVM)</td>
+						</tr>
+					</table>
+					<img src="EntwicklungsLaufzeitUmgebung.png" alt="" height="400px">
+				</section>
+				<section id="HamInstallation">
+					<h2>Installation Hamster-Simulator</h2>
+					<ul>
+						<li>Der Hamster-Simulator ist ein in Java geschriebenes Programm.</li>
+						<li>Grundsätzlich besteht dieses aus einem .jar-File, welches gestartet werden kann, sofern Sie
+							eine Java-Runtime (Laufzeitumgebung) auf ihrem Laptop installiert haben.</li>
+						<li>Die Anleitung für die Installation finden Sie im <a
+								href="script.html#InstallHamster">script</a> -> Grundlagen der Programmierung ->
+							Installation des Hamster-Simulators.</li>
+					</ul>
+					<p style="font-weight: bold;">Demo</p>
+				</section>
+				<section id="AuftragHamInstallation">
+					<h2>Installation Hamster-Simulator: Auftrag</h2>
+					<table>
+						<tr>
+							<td>Auftrag</td>
+							<td>Installieren Sie Java und den Hamster-Simulator gemäss der soeben gezeigten Demo und dem
+								<a href="script.html#InstallHamster">script</a> -> Grundlagen der Programmierung ->
+								Installation des Hamster-Simulators..
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>15'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Das Programm (der Hamster-Simulator) muss ohne Fehlermeldung starten.</td>
+						</tr>
+					</table>
+				</section>
+				<section id="HamZweck">
+					<h2>Warum Hamster?</h2>
+					<ul>
+						<li>Grundkonzepte der Programmierung erlernen, ohne sich um z.B. die Komplexität einer IDE
+							(Entwicklungsumgebung) oder Java-Dependencies kümmern zu müssen.</li>
+						<li>Schrittweiser Aufbau - verschiedene Konzepte der Progrmmierung können schrittweise und
+							isoliert erlernt werden.</li>
+					</ul>
+					<p>Die mit dem Hamster-Simulator erlernten Konzepte werden in der LB 1 geprüft.</p>
+				</section>
+				<section id="erstesHamsterProgramm">
+					<h2>Ein Hamster-Programm</h2>
+					<pre><code>
+                void main () {
+                  // friss erstes Korn
+                  vor ();
+                  vor ();
+                  nimm ();
+                  // friss zweites Korn
+                  linksUm ();
+                  vor ();
+                  vor ();
+                  nimm ();
+                }
+                </code></pre>
+					<img src="TerritoriumHamster1.png" alt="" height="250px">
+				</section>
+				<section id="HamBedienung">
+					<h2>Bedienung</h2>
+					<ol>
+						<li>Eine eigene Aufgabe erstellen -> <em>Territorium gestalten</em>.</li>
+						<li>Dem Hamster Anweisungen geben, was er tun soll -> <em>Java Code erstellen</em>.</li>
+						<li>Das Programm kompilieren -> <em>ihren Code für die (virtuelle) Umgebung ausführbar
+								machen</em>.</li>
+						<li>Programm ausführen -> <em>der Hamster führt ihre Befehle aus</em>.</li>
+						<li>Das Programm im Debug-Modus ausführen -> <em>der Hamster führt die Befehle Schritt für
+								Schritt aus</em>.</li>
+					</ol>
+					<p><a
+							href="https://www.java-hamster-modell.de/videos/Hamster-Simulator-Light/Hamster-Simulator-Light.mp4">Intro</a>
+					</p>
+				</section>
+				<section id="HamsterBefehleAufgabe">
+					<h2>Hamster-Befehle</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können den Hamster mit einfachen Befehlen steuern.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>Wie Sie im Beispielprogramm gesehen haben, versteht der Hamster einfache Befehle. Lesen
+								Sie dazu im Skript -> Grundlagen der Programmierung -> Hamster-Befehle und lösen Sie
+								dann die Aufgabe "Laufzeitfehler". Prüfen Sie ihre Antwort mit der Musterlösung.</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>15'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="einfachesProgramm">
+					<h2>Ein einfaches Programm</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können mit dem Hamster-Simulator ein Programm erstellen und ausführen.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+
+								<ul>
+									<li>Beliebiges Territorium erstellen und abspeichern.</li>
+									<li>Möglichst einfachen Code erstellen (z.B. nur mit vor()).</li>
+									<li>Programm kompilieren und ausführen.</li>
+									<li>Debugger ausprobieren.</li>
+								</ul>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>selbständig</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>20'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="if-then-else">
+					<h2>if-then-else</h2>
+					<p>In vielen Situationen soll der Hamster entscheiden, <b>ob</b> er etwas tun soll - unter welcher
+						Bedingung. Diese Abfrage wird mit dem if-then-else-Konstrukt programmiert.</p>
+					<pre><code>
+						void main () {
+							if ( vornFrei ()) { // bedingte Anweisung
+								vor ();
+								linksUm ();
+							}
+							if ( kornDa () &amp;&amp; vornFrei ()) { // Alternativanweisung
+								nimm ();
+								vor ();
+							} else {
+								linksUm ();
+							}
+						}
+						</code></pre>
+					<p>Um zu entscheiden, welche Anweisung ausgeführt werden soll, verwenden wir <b>Testbefehle</b>.
+						Diese funktionieren wie die Hamster-Befehle, die Sie bereits kennengelernt haben, jedoch geben
+						Sie einen Wahrheitswert (true/false) zurück.</wbr></p>
+					<ul>
+						<li>vornFrei(): Gibt true zurück, wenn vor dem Hamster keine Wand ist.</li>
+						<li>kornDa(): Gibt true zurück, wenn ein Korn unter dem Hamster liegt.</li>
+					</ul>
+				</section>
+				<section id="loops">
+					<h2>Schleifen (<em>loops</em>)</h2>
+					<p>Soll der Hamster etwas so lange tun, wie eine bestimmte Bedingung gilt, verwenden wir Schleifen
+						(wir nennen sie auch: <em>loops</em>).</p>
+					<pre><code>
+						void main () {
+							macheEtwasMehrmals ();
+							macheEtwasMehrmalsMitDo ();
+						}
+		
+						void macheEtwasMehrmals () {
+							while ( vornFrei ()) { // while - Schleife
+								vor ();
+							}
+						}
+		
+						void macheEtwasMehrmalsMitDo () {
+							do { // do - Schleife
+								vor ();
+							} while ( vornFrei ());
+						}
+						</code></pre>
+					<p>Die Konstrukte <em>if-Anweisung</em> und <em>loops</em> heissen <b>Kontrollstrukturen</b>.</p>
+				</section>
+				<section id="FestigenIfundLoops">
+					<h2>Auftrag: Einlesen in if-then-else und loops</h2>
+					<table>
+						<tr>
+							<td>Ziel</td>
+							<td>Sie verstehen die Konzepte der bedingten Ausführung (if-then-else) und von loops.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Lesen Sie im <a href="script.html">Script</a> den Abschnitt Auswahlanweisung.
+										Notieren Sie sich
+										ihre Fragen.</li>
+									<li>Stellen Sie ihrem Tandem-Partner ihre Fragen.</li>
+									<li>Wenn alles klar scheint: Stellen Sie ihrem Tandem-Partner eine Kontrollfrage.
+									</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>15' einlesen + 10' Diskussion</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Mit der nächsten praktischen Aufgabe</td>
+						</tr>
+					</table>
+				</section>
+				<section id="AufgabeProgrammieren1">
+					<h2>Auftrag: Programmieren</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie erstellen ein erstes Programm mit dem Hamster-Simulator.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Bauen Sie im Hamster-Simulator das in der nächsten Folie gezeigte Territorium.
+									</li>
+									<li>Speichern Sie das Territorium ab.</li>
+									<li>Schreiben Sie ein Programm, welches den Hamster veranlasst, alle Körner in
+										seinem Territorium aufzusammeln.</li>
+									<li>Kompilieren Sie ihr Programm und testen Sie es.</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+						<tr>
+							<td>Pro</td>
+							<td>
+								<ol>
+									<li>Der Hamster soll alle aufgenommenen Körner auf dem letzten Feld (unten rechts)
+										wieder ablegen.</li>
+									<li>Verteilen Sie 10 Körner <b>zufällig</b> auf dem Territorium. Der Hamster soll
+										nun die Aufgabe lösen.</li>
+									<li>Nutzen Sie <b>Testbefehle</b> und <b>Schleifen</b>, um ihren Code zu verkürzen,
+										indem Sie Befehle, die mehrfach vorkommen, zusammenfassen.
+									</li>
+								</ol>
+								<p>Für die Lösung der Pro-Aufgaben haben Sie im Unterricht bereits Hinweise erhalten,
+									aber noch nicht alles Rüstzeug dazu. Sie dürfen Internet-Recherche betreiben.</p>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section id="AufgabeProgrammieren1Bild">
+					<h2>Territorium für <em>Auftrag: Programmieren</em></h2>
+					<img src="HamsterTerr1.png" alt="">
+				</section>
+			</section>
+			<!-- Block 2 -->
+			<section>
+				<section class="toc" id="b2">
+					<h1>Block 2: Datentypen, Variablen und <em>functions</em> mit dem Hamster</h1>
+				</section>
+				<section id="zieleB2">
+					<h2>Block 2: Lernziele</h2>
+					<ul>
+						<li>Ich kann procedures und functions nutzen, um den Code zu vereinfachen, mehrfach verwendete
+							Befehle zu bündeln und Rückgabewerte zu berechnen.</li>
+						<li>Ich kann Variablen definieren und mit Operatoren verknüpfen, damit ich Berechnungen
+							durchführen kann.</li>
+						<li>Ich kann den Scope von Variablen bestimmen.</li>
+						<li>Ich kann functions mit Parametern definieren und nutzen.</li>
+					</ul>
+				</section>
+				<section id="ablaufB2">
+					<h2>Block 2: Ablauf</h2>
+					<ul>
+						<li>Procedures & functions</li>
+						<li>Procedures & functions: Übung</li>
+						<li>Variablen, Funktionsparameter</li>
+						<li>Abschliessende Aufgaben bis und ohne "objektorientiert"</li>
+					</ul>
+				</section>
+				<section id="proceduresIntro">
+					<h2>Prozeduren</h2>
+					<p style="font-size: 0.8em;">Prozeduren sind eine Möglichkeit, Code (Anweisungen) zu gruppieren.
+						Dadurch wird:</p>
+					<ul style="font-size: 0.8em;">
+						<li>der Code besser lesbar.</li>
+						<li>verhindert, dass Code doppelt geschrieben werden muss (duplicate code).</li>
+					</ul>
+					<p style="font-size: 0.8em;">Das main-Konstrukt ist eine spezielle Prozedur, welche beim Start eines
+						(Java-)Programms automatisch ausgeführt wird. Es ist also der Einstiegspunkt in das
+						Programm.<br>
+						Die Befehle, die der Hamster bereits kennt (z.B. <em>vor()</em>) sind ebenfalls procedures.
+						Diese sind im Framework schon vorprogrammiert.</p>
+					<pre><code style="font-size: 1.3em;">
+	void rechtsUm () { // Prozedurdefinition
+		linksUm ();
+		linksUm ();
+		linksUm ();
+	}
+
+	void main () { // main - Prozedur
+		rechtsUm (); // Prozeduraufruf
+		nimm ();
+	}
+					</code></pre>
+				</section>
+				<section id="functionsIntro">
+					<h2>Functions</h2>
+					<p>Functions sind Prozeduren, die einen <b>Rückgabewert</b> haben. Die Vorteile entsprechen denen
+						von Prozeduren. Zusätzlich können Functions aber z.B. in <em>if-</em> und
+						<em>while-Statements</em> verwendet werden:
+					</p>
+					<pre><code style="font-size: 1.3em;">
+	boolean linksFrei () { // Definition einer booleschen Funktion
+		linksUm ();
+		if ( vornFrei ()) {
+			return true ; // boolesche return - Anweisung
+		} else {
+			return false ; // boolesche return - Anweisung
+		}
+	}
+	void main () {
+		while ( vornFrei () && ! linksFrei ()) { // Aufruf einer booleschen Funktion
+			vor ();
+		}
+		if ( linksFrei ()) { // Aufruf einer booleschen Funktion
+			linksUm ();
+			vor ();
+		}
+	}
+					</code></pre>
+				</section>
+				<section id="proceduresEx">
+					<h2>Auftrag: Procedures & Functions</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie verbessern ihren Code, indem Sie Prozeduren nutzen.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Lesen Sie den Abschnitt <em>Prozeduren</em> im <a href="script.html">Script</a>
+										und stellen Sie einem Kollegen oder der LP Fragen, wenn etwas nicht klar ist.
+									</li>
+									<li>Passen Sie den in <a href="#AufgabeProgrammieren1">Auftrag: Programmieren</a>
+										erstellten Code (oder den Code der Musterlösung) gemäss folgendem Slide an.</li>
+									<li>Die Semantik ihres Codes ("was der Code macht") soll sich nicht ändern.</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>45'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+					</table>
+				</section>
+				<section id="codeImprovementswithFunctions">
+					<h2>Code verbessern mit <em>Procedures</em></h2>
+					<p>Sie wissen aus dem Script, dass Procedures dazu da sind, Code zu gruppieren. Functions sind
+						spezielle Procedures, die einen Rückgabewert haben.<br>
+						In ihrem Code sollen sie dies folgendermassen nutzen:</p>
+					<ol style="font-size: 0.8em;">
+						<li>Identifizieren Sie den Codeabschnitt, welcher für das Vorwärstlaufen und aufnehmen in einer
+							"Zeile" zuständig ist. Dieser Abschnitt kommt mehrfach vor, da der Hamster mehrfach in einer
+							Zeile läuft und Körner aufnimmt - immer genau gleich.</li>
+						<li>Wählen Sie einen Namen für den Codeabschnitt, und erstellen Sie eine neue procedure mit
+							diesem Namen.</li>
+						<li>Kopieren Sie den Codeabschnitt in diese procedure.</li>
+						<li>Ersetzen Sie nun alle Aufrufe des Codeabschnitts durch einen Aufruf der neuen procedure.
+						</li>
+						<li>Pro: Wiederholen Sie dieses Vorgehen für den Codeabschnitt, welcher den Hamster am Ende der
+							Zeile nach links oder rechts dreht und auf die nächste Zeile bewegt. Achtung: Diese
+							Codeabschnitte sind nicht immer gleich, aber fast. Setzen Sie <em>if-then-else</em> ein!
+						</li>
+					</ol>
+					<p style="font-weight: bold;">-> Musterlösung und Demo</p>
+				</section>
+				<section id="VariablesIntro">
+					<h2>Variablen (1/1)</h2>
+					<p>Das <b>Gedächtnis</b> des Hamsters</p>
+					<p style="font-size: 0.8em;">Stellen Sie sich folgende Situation vor: Sie sollen den Hamster durch
+						sein Territorium bewegen und dabei am Schluss angeben können, wie viele Schritte er gemacht
+						hat.<br>
+						Wie könnten Sie das umsetzen? Wie "merken" Sie sich die Anzahl Schritte?</p>
+					<p style="font-size: 0.8em;">Am einfachsten wäre es, wenn Sie den Speicher (RAM) des Computers
+						nutzen könnten, um eine Zahl zu speichern.</p>
+					<p style="font-size: 0.8em;">Dazu gibt es <em>Variablen</em> und <em>Konstanten</em>. Wir lernen
+						zuerst Variablen kennen.</p>
+					<pre><code style="font-size: 1.3em;">
+			boolean frei = false;
+			int anzahl = 13;
+					</code></pre>
+				</section>
+				<section id="VariablesIntro2">
+					<h2>Variablen (2/2)</h2>
+					<p>Zuweisung, Operatoren, Vergleichsoperatoren</p>
+					<pre><code style="font-size: 1.3em;">
+						int preisAudi = 50000;
+						preisAudi = preisAudi + 1000;
+						int preisCadillac = 60000;
+						int preisBeide = preisAudi + preisCadillac;
+						
+						boolean isAudiMoreExpensive = preisAudi > preisCadillac;
+					</code></pre>
+					<p><b>Gültigkeitsbereich (<em>Scope</em>)</b></p>
+					<ul>
+						<li>Ausserhalb von procedures definiert: globale Variable</li>
+						<li>Innerhalb einer procedure definiert: lokale Variable auf die procedure</li>
+						<li>Innerhalb einer Kontrollstruktur definiert: lokale Variable in Bezug auf die
+							Kontrollstruktur</li>
+					</ul>
+				</section>
+				<section id="functionsparamsIntro">
+					<h2>Funktionsparameter</h2>
+					<p>Sie haben gelernt: <em>functions</em> können einen Wert zurückliefern.</p>
+					<p>Umgekehrt können <em>functions und procedures</em> auch Werte entgegennehmen.</p>
+					<pre><code style="font-size: 1.3em;">
+						void turn(int anzahl) {
+							while (anzahl > 0) {
+								linksUm();
+								anzahl = anzahl - 1;
+							}
+						}
+
+						void main() {
+							turn(3); // Drehe um 270 Grad nach links
+							turn(4); // Drehe einmal im Kreis
+						}
+					</code></pre>
+				</section>
+				<section id="AufgabeScriptLesen">
+					<h2>Auftrag</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie vertiefen die Konzepte von <b>Variablen</b> und <b>Funktionsparametern</b>.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Lesen Sie die Abschnitte <em>
+									Variablen und
+									Ausdrücke
+								</em> und <em>Funktionsparameter</em> im
+								<a href="script.html">Script</a>. Versuchen Sie, die soeben besprochenen
+								Konzepte wiederzuerkennen und zu
+								vertiefen.
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>20'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Sie werden Aufgaben dazu lösen</td>
+						</tr>
+					</table>
+				</section>
+				<section id="UebungbisUndOhneObjektorientiert">
+					<h2>Übungen</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie üben das Programmieren mit Hilfe der bisher gelernten Konzepte (Kontrollstrukturen,
+								functions, Variablen, (Vergleichs-)Operatoren).</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Auf den folgenden zwei Slides (<a href="#aufgabetheline">hier</a> und <a
+									href="#aufgabemanylines">hier</a>) finden Sie Aufgaben mit aufsteigendem
+								Schwierigkeitsgrad. Wählen Sie bei jeder Aufgabe die schwierigste Stufe, von der
+								Sie denken, dass Sie sie lösen können.
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>60'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum / Sie erhalten eine Umfrage in Teams. Markieren Sie dort die Stufe(n) für jede
+								gelöste Aufgabe.</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 3 -->
+			<section>
+				<section class="toc" id="b3">
+					<h1>Block 3: Praktische Übungen</h1>
+				</section>
+				<section id="ablaufB3">
+					<h2>Block 3: Ablauf</h2>
+					<p style="font-size: 0.8em;">Sie haben in den letzten beiden Blöcken die Konzepte
+						<em>Kontrollstrukturen</em>,
+						<em>Prozeduren</em>, <em>Parameter</em> und <em>Variablen</em> kennengelernt.
+						<br />In diesem Block festigen Sie diese Konzepte mit Übungen. Beachten Sie die <a
+							href="#zieleB3">Lernziele</a>.
+					</p>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>Ziel</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>0</td>
+							<td>Übung <a href="#KontrollstrukturenUeben">Programmieren mit Kontrollstrukturen</a></td>
+							<td>Sie können die Kontrollstruktur <em>loop</em> nutzen, um sich wiederholende Befehle
+								auszuführen.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Übung <a href="#FunctionParameterUeben">Programmieren mit Parametern</a></td>
+							<td>Sie können Parameter einsetzen, um Procedures dynamisch zu gestalten.</td>
+							<td>20'</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="background-color: gray;">Die folgenden Aufgaben dürfen Sie, sobald
+								die Aufgaben 0 und 1 erledigt sind, in beliebiger Reihenfolge bearbeiten. Der
+								Schwierigkeitsgrad ist aufsteigend.</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><a href="#aufgabetheline">Aufgabe: The line</a></td>
+							<td>Sie üben das Programmieren mit Hilfe der bisher gelernten Konzepte (Kontrollstrukturen,
+								functions, Variablen, (Vergleichs-)Operatoren).</td>
+							<td>45'</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><a href="#UebungsAufgabeMulde">Aufgabe: Mulde durchschreiten</a></td>
+							<td>Sie üben, einen Programmablauf zu erstellen und ihn mit Hilfe von Kontrollstrukturen zu
+								implementieren.</td>
+							<td>45'</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td><a href="#aufgabemanylines">Aufgabe: Many lines</a></td>
+							<td>Sie üben, einen Programmablauf zu erstellen und ihn mit Hilfe von Kontrollstrukturen zu
+								implementieren.</td>
+							<td>60'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="zieleB3">
+					<h2>Block 3: Lernziele</h2>
+					<ul>
+						<li>Ich kann die Kontrollstrukturen <em>Verzweigung (if-then-else)</em> und <em>loop
+								(while)</em> nutzen, um den Programmablauf zu steuern.</li>
+						<li>Ich kann procedures und functions nutzen, um den Code zu vereinfachen, mehrfach verwendete
+							Befehle zu bündeln und Rückgabewerte zu berechnen.</li>
+						<li>Ich kann Variablen definieren und mit Operatoren verknüpfen, damit ich Informationen
+							speichern und Berechnungen
+							durchführen kann.</li>
+						<li>Ich kann den Scope von Variablen bestimmen.</li>
+						<li>Ich kann procedures mit Parametern definieren und nutzen.</li>
+					</ul>
+				</section>
+				<section id="KontrollstrukturenUeben">
+					<h2 style="margin-bottom: 0;">Auftrag: Programmieren mit Kontrollstrukturen</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können Kontrollstrukturen nutzen, um den Programmablauf aus <a
+									href="#AufgabeProgrammieren1">Auftrag: Programmieren</a> zu steuern.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Nehmen Sie den letzten Stand des Codes aus <em>Auftrag: Programmieren</em>,
+										welchen Sie im <a href="#codeImprovementswithFunctions">Block 2</a> mit
+										procedures verbessert haben. Sie können auch den <a
+											href="AufgabeProgrammieren14.ham">Code aus der Musterlösung</a> verwenden.
+									</li>
+									<li>Identifizieren Sie Codestellen, an welchen wiederholt der Befehl
+										<code>vor()</code>
+										verwendet wird. Sie finden stellen, an welchen der Befehl <code>vor()</code>
+										zwei mal
+										aufgerufen wird, sowie Stellen, an welchen er drei mal aufgerufen wird.
+									</li>
+									<li>Erstellen Sie eine procedure <code>gehVor2()</code>, die den Befehl
+										<code>vor()</code> zwei mal
+										ausführt. Nutzen Sie eine while-Schleife und Variablen innerhalb dieser
+										Prozedur, welche zwei mal
+										durchlaufen wird und jeweils <code>vor()</code> aufruft.
+									</li>
+									<li>Ersetzen Sie alle Stellen, an denen <code>vor()</code> zwei mal aufgerufen wird,
+										durch einen Aufruf von <code>gehVor2()</code>.</li>
+									<li>Führen Sie die Schritte 3 und 4 ebenfalls für den Fall durch, dass
+										<code>vor()</code> drei mal aufgerufen wird.
+									</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Selbständig mit der <a href="AufgabeProgrammieren15.ham">Musterlösung</a>.</td>
+						</tr>
+						<tr>
+							<td>Richtzeit</td>
+							<td>30'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="FunctionParameterUeben">
+					<h2>Auftrag: Programmieren mit Parametern</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können Parameter nutzen, um procedures dynamisch zu gestalten.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Nehmen Sie den letzten Stand des Codes aus <em>Auftrag: Programmieren</em>,
+										welchen Sie in der <a href="#KontrollstrukturenUeben">letzten Aufgabe</a>
+										verbessert haben. Sie können auch den <a href="AufgabeProgrammieren15.ham">Code
+											aus der Musterlösung</a> verwenden.
+									</li>
+									<li>Passen Sie die Procedure <code>gehVor2()</code> an, indem Sie einen Parameter
+										hinzufügen, der die Anzahl der Wiederholungen (Schritte) angibt. Der Name der
+										Procedure ist dann <code>gehVor</code> (mit einem Parameter...).</li>
+									<li>Löschen Sie die procedure <code>gehVor3()</code>.</li>
+									<li>Ersetzen Sie alle Aufrufe von <code>gehVor2()</code> und von
+										<code>gehVor3()</code> durch den Aufruf der Procedure mit Parametern.
+									</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Selbständig mit der <a href="AufgabeProgrammieren16.ham">Musterlösung</a>.</td>
+						</tr>
+						<tr>
+							<td>Richtzeit</td>
+							<td>20'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="aufgabetheline" style="font-size: 0.6em;">
+					<h2>Aufgabe: The line</h2>
+					<p>
+						Das ist eine <b>imperative</b> Hamsteraufgabe! Gegeben ist das nachfolgende Territorium.
+					</p>
+					</ul>
+					<img src="binaryStart.png" alt="">
+					<ul>
+						<li>Auf der Kachel, auf der sich der Hamster befindet, liegen Körner in unbestimmter Anzahl,
+							aber maximal 255.</li>
+						<li>Der Hamster soll alle Körner aufnehmen.</li>
+					</ul>
+					<h3>Aufgaben</h3>
+					<ol>
+						<li>Der Hamster soll alle aufgenommenen Körner auf dem letzten Feld ablegen.</li>
+						<li>Der Hamster soll alle aufgenommenen Körner auf dem zweitletzten Feld ablegen, wobei die
+							Länge des Territoriums auch variieren können soll.</li>
+						<li>Der Hamster soll auf jedem Feld gleich viele Körner ablegen. Wenn ein Rest übrig bleibt,
+							soll er diese auf dem ersten Feld ablegen.</li>
+						<li>Challenge: Der Hamster ist faul. Lösen Sie diese Aufgabe so, dass der
+							Hamster möglichst wenige Befehle ausführen muss.</li>
+						<li>Der Hamster soll die Anzahl aufgenommener Körner binärkodiert wieder hinlegen (d.h., von
+							dezimal nach binär umrechnen):
+							<ul>
+								<li>Eine leere Kachel entspricht dem Wert 0.</li>
+								<li>Ein Korn auf der Kachel entspricht dem Wert 1.</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section id="UebungsAufgabeMulde">
+					<h2>Aufgabe: Mulde durchschreiten</h2>
+					<p>Ein Hamster steht mit Blickrichtung nach rechts ohne Körner im Maul vor einer unregelmässigen
+						Mulde unbekannter Tiefe (Beispiele siehe Bild).</p>
+					<img src="UebungMuldeDurchscreiten.png" alt="">
+					<p>Der Hamster bekommt die Aufgabe, die Mulde zu durchschreiten. Sobald er dies geschafft hat,
+						d.h. sobald er auf eine Ebene gelangt, die dieselbe Höhe aufweist wie die Ausgangsposition des
+						Hamsters, soll er stehen bleiben.</p>
+				</section>
+				<section id="aufgabemanylines" style="font-size: 0.6em;">
+					<h2>Aufgabe: Many lines</h2>
+					<p style="margin-bottom: 0;">
+						Das ist eine <b>imperative</b> Hamsteraufgabe! Gegeben ist das nachfolgende Territorium.
+					</p>
+					</ul>
+					<img src="durchgang.png" alt="" height="250px">
+					<h3 style="margin-bottom: 0;">Aufgabe</h3>
+					<ul>
+						<li>Der Hamster befindet sich wie abgebildet und mit gegebener Blickrichtung auf dem
+							Territorium.</li>
+						<li>In der unteren linken Ecke liegt ein Korn.</li>
+						<li>Der Hamster verfolgt das Ziel, das Korn zu finden und aufzunehmen. Dann endet das Programm.
+						</li>
+						<li>Der Hamster soll den Weg auch dann noch finden, wenn ein Durchgang horizontal verschoben
+							wird.</li>
+					</ul>
+					<h3 style="margin-bottom: 0;">Pro-Aufgaben (freiwillig)</h3>
+					<ol>
+						<li>Der Hamster soll den kürzesten Weg zu seinem Ziel nehmen.</li>
+						<li>Der Hamster darf ausschliesslich jeden zweiten Durchgang ab seinem aktuellen Standort
+							nehmen. Auch jetzt soll er den kürzesten Weg nehmen.</li>
+						<li>In der linken unteren Ecke liegen jetzt n Körner (1 <= n <=4). Der Hamster soll diese Körner
+								aufnehmen und so viele "Stockwerke" hochsteigen, wie er Körner aufgenommen hat. Dann
+								soll er ganz nach links laufen.</li>
+					</ol>
+				</section>
+			</section>
+			<!-- Block 4 -->
+			<section>
+				<section class="toc" id="b4">
+					<h1>Block 4:<br />EVA-Prinzip<br />GIT<br />Abläufe</h1>
+				</section>
+				<section id="zieleB4">
+					<h2>Block 4: Lernziele</h2>
+					<ul>
+						<li>Ich kann kann das EVA-Prinzip anhand einer procedure erklären.</li>
+						<li>Ich kann GIT als Versionskontrollsystem nutzen, um meinen eigenen Code zu verwalten.</li>
+						<li>Ich kann Abläufe in einer Aufgabe erkennen und als Pseudocode oder als Flussdiagramm
+							darstellen.</li>
+					</ul>
+				</section>
+				<section id="EVAAuftrag">
+					<h2>EVA-Prinzip im eigenen Code erkennen</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie erkennen das EVA-Prinzip in Ihrem Code, indem Sie ihre procedures analysieren.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Suchen Sie in ihrem Code (aus den Übungen von Block 3) eine procedure und
+										identifizieren Sie, wie die procedure das EVA-Prinzip (Eingabe, Verarbeitung,
+										Ausgabe) umsetzt.
+										<ul>
+											<li>Eingabe: Welche Daten werden benötigt?</li>
+											<li>Verarbeitung: Welche Schritte werden unternommen?</li>
+											<li>Ausgabe: Welche Ergebnisse werden erzeugt?</li>
+										</ul>
+									</li>
+									<li>Erklären Sie diese Codestelle ihrem Kollegen.</li>
+									<li>Ihr Kollege wird ihren Code der Klasse erklären.</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>im Plenum</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>10' Interview, 5' Plenum</td>
+						</tr>
+					</table>
+				</section>
+				<section id="gitIntro">
+					<h2>Versionskontrolle mit Git</h2>
+					<h3>Wichtigste Gründe für ein Versionskontrollsystem</h3>
+					<ul>
+						<li><b>Versionierung</b> von Files: Vergleichen, gelöschten Code finden, Historie einsehen,
+							...
+						</li>
+						<li><b>Im Team arbeiten</b>: Zeitgleich an denselben Files arbeiten, Änderungen an
+							gemeinsamen
+							Files zusammenführen, ...</li>
+					</ul>
+					<h3>Wie geht das?</h3>
+					<ul>
+						<li>Zentraler Server (remote repository)</li>
+						<li>Lokales repository mit tracking der Änderungen</li>
+						<li>"Merge"-Funktion, um Änderungen von verschiedenen Personen an denselben Files
+							zusammenzuführen</li>
+					</ul>
+				</section>
+				<section id="gitOverview">
+					<h2>Git-Flow</h2>
+					<table>
+						<tr>
+							<td><img src="gitflowwithcommands.png" alt="" style="height: 500px; width: 500px;"></td>
+							<td style="width: 40%; vertical-align: middle;">
+								<ul style="font-size: 0.7em;">
+									<li>Git kennt <b>remote</b> und <b>local</b> Repositories. Ein remote repository
+										wird auf ihren lokalen Client <b>gecloned</b>.</li>
+									<li>Repositories haben branches. Diese finden Sie dann natürlich auch im local
+										repository.</li>
+									<li>Eine Änderung eines files bringen Sie mit <b>commit</b> auf einen branch.
+									</li>
+									<li>Die Änderungen eines local repositories <b>pushen</b> Sie auf das remote
+										repository.</li>
+									<li>Die Änderungen eines remote repositories <b>pullen</b> Sie auf das local
+										repository.</li>
+									<li>Mit <b>fetch</b> und <b>merge</b> verbinden Sie Änderungen auf dem remote
+										repository mit denen auf dem local repository.</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section id="AufgabeGit">
+					<h2>Aufgabe: Git - einfachster Anwendungsfall</h2>
+					<table style="font-size: 0.6em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie stellen sicher, dass Sie Git für die Versionierung von Code und das Arbeiten im
+								Team
+								im einfachsten Fall verwenden können.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Sie sollen die flows für das clonen eines Repos, pull, commit, diff und push von
+								Änderungen anwenden können.
+								<ol>
+									<li>Holen Sie sich <em>Git-Bash</em>.</li>
+									<li>Loggen Sie sich auf codevogel.ch ein und stöbern sie im Projekt <a
+											href="https://codevogel.ch/2025-m319/hamster"
+											target="_blank">https://codevogel.ch/2025-m319/hamster</a>.
+									</li>
+									<li>Clonen Sie das Repo. Nutzen Sie den Befehl <code>git clone</code>.
+										Ressourcen:
+										<a href="script.html#Git" target="_blank">Script</a>, <a
+											href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone"
+											target="_blank">git
+											clone</a>.
+									</li>
+									<li>Erstellen Sie einen neuen Ordner mit ihrem Nachnamen und einem A davor, wenn Sie
+										in der INPE1A sind, ansonsten einem B davor. Format:
+										&lt;Klassenbuchstabe&gt;-&lt;Nachname&gt;</li>
+									<li>Fügen Sie ein neues File (Hamster-Code, also ein .ham File) ihrem lokalen Repo
+										hinzu (in ihrem Ordner).
+										Sie brauchen dazu den Befehl <code>git add</code>.</li>
+									<li>Machen Sie einen <code>git pull</code> um sicher zu sein, dass Sie die
+										aktuellste Version des Remote-Repository's haben.</li>
+									<li><em>Commiten</em> Sie ihr neues File mit <code>git commit</code>.
+										Ressourcen:
+										<a href="script.html#Git" target="_blank">Script</a>, <a
+											href="https://www.atlassian.com/git/tutorials/saving-changes/git-commit"
+											target="_blank">git
+											commit</a>.
+									</li>
+									<li><em>Pushen</em> Sie ihren commit mit <code>git push</code> auf das
+										Remote-Repository.</li>
+									<li>Prüfen Sie auf <em>codevogel.ch</em>, ob ihre Änderungen im remote repository
+										angekommen sind.</li>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Prüfen Sie gegenseitig, ob alle o.g. Schritte korrekt durchgeführt wurden.</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>25'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="komplexeAbläufe">
+					<h2>Komplexe Abläufe</h2>
+					<img src="ablaeufe.jpg" alt="">
+				</section>
+				<section id="vonDerAufgabeZumCode">
+					<h2>Von der Aufgabe zum Code</h2>
+					<p>Die Aufgaben, die Sie bisher mit Code lösen sollten, konnten Sie meist überblicken. Nun werden
+						sie immer komplexer - es ist schwierig, die vielen einzelnen Schritte zu erkennen, die der
+						Hamster tun muss, um sein Ziel zu erreichen.</p>
+					<p>Um diese Komplexität zu bewältigen, ist es hilfreich, die Aufgaben in kleinere, überschaubare
+						Schritte zu zerlegen. Die Summe dieser Schritte bildet den <b>Ablauf</b> des Programms.</p>
+					<h3>Möglichkeiten</h3>
+					<ul>
+						<li><b>Pseudocode</b>: Sie überlegen sich, was der Hamster tun muss, und schreiben den Ablauf in
+							Stichworten auf.</li>
+						<li><b>Flussdiagramm</b>: Sie visualisieren den Ablauf mit einem Diagramm, das die einzelnen
+							Schritte und Entscheidungen darstellt.</li>
+					</ul>
+				</section>
+				<section id="AufgabeSpaghettiKochen">
+					<h2>Aufgabe: Spaghetti Kochen</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie üben, Abäufe zur Lösung von komplexen Aufgaben zu erstellen.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>Sie sollen Spaghetti kochen. Überlegen Sie sich, welche Schritte dafür notwendig sind
+								und in welcher Reihenfolge sie ausgeführt werden müssen. Sie haben diese <a
+									href="#hilfsmittel">Hilfsmittel</a> zur Verfügung.</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Gruppenarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>20'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="hilfsmittel">
+					<h2>Hilfsmittel</h2>
+					<h3>Funktionen (<em>procedures</em>)</h3>
+					<ul style="font-size: 0.8em;">
+						<li>void herdAnstellen()</li>
+						<li>void herdAusschalten()</li>
+						<li>void pfanneMitWasserFuellen()</li>
+						<li>void abgiessen()</li>
+						<li>void salzen()</li>
+						<li>void spaghettiInPfanne()</li>
+						<li>void anrichten()</li>
+						<li>void umruehren()</li>
+						<li>boolean kochtDasWasser()</li>
+						<li>boolean sindDieSpaghettiGar()</li>
+						<li>void warten (int anzahlSekunden)</li>
+					</ul>
+					<h3>Kontrollstrukturen</h3>
+					<ul style="font-size: 0.8em;">
+						<li>Schleife: <code>while</code></li>
+						<li>Verzweigung: <code>if</code></li>
+					</ul>
+				</section>
+				<section id="AufgabenLoesenUndInGitPushen">
+					<h2>Aufgaben lösen und in Git pushen</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Ich kann meine Lösungen (meinen Code) in Git pushen.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>Sie haben im Block 3 Aufgaben gelöst und damit <em>Code erstellt</em>. Sie sollen diesen
+								Code nun in Ihr Git-Repository pushen.
+								<ol>
+									<li>Sie haben bereits das Projekt <a href="https://codevogel.ch/2025-m319/hamster"
+											target="_blank">https://codevogel.ch/2025-m319/hamster</a> auf ihren lokalen
+										Rechner gecloned und einen Ordner für sich erstellt.</li>
+									<li>Fügen Sie in diesem Ordner Ihre gelösten Aufgaben als neue Dateien hinzu.
+										Achtung: Nur Quellcode-Dateien sind erlaubt (.ham, .ter).</li>
+									<li>Fügen Sie die neuen Dateien mit <code>git add</code> zum Staging-Bereich hinzu.
+									</li>
+									<li>Commiten Sie Ihre Änderungen mit <code>git commit</code>.</li>
+									<li>Pushen Sie Ihre Änderungen mit <code>git push</code> in das Remote-Repository.
+									</li>
+									<li>Prüfen Sie im WebGui, ob ihr Code erfolgreich gepusht wurde.</li>
+								</ol>
+								Wenn Sie ihre Lösungen erfolgreich gepusht haben, nutzen Sie die Zeit für weitere
+								Aufgaben aus Block 3. Pushen Sie ihre Lösungen jeweils nach Abschluss der Aufgabe in's
+								Repository.
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Selbständig</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>45'</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 5 -->
+			<section>
+				<section class="toc" id="b5">
+					<h1>Block 5: Struktogramme</h1>
+				</section>
+				<section id="zieleB5">
+					<h2>Block 5: Lernziele</h2>
+					<ul>
+						<li>Ich kann den Ablauf eines Programmes mit einem Struktogramm darstellen, indem ich die
+							Elemente <em>lineare Struktur</em>, <em>Schleifen</em> und <em>Verzweigung</em>
+							verwende.
+						</li>
+						<li>Ich kann die Begriffe <em>Objekt</em> und <em>Klasse</em> im Kontext der
+							objektorienterten
+							Programmierung anhand eines alltäglichen Beispiels erklären.</li>
+						<li>Ich kann im Hamster-Simulator Objekte erstellen und steuern.</li>
+						<li>Ich kann im Hamster-Simulator Subklassen mit neuen Methoden erstellen und davon Objekte
+							instanzieren.</li>
+					</ul>
+				</section>
+				<section id="introstruktogramme">
+					<h2>Struktogramme</h2>
+					<ul>
+						<li>Struktogramme sind eine Möglichkeit, den Ablauf eines Programmes grafisch darzustellen.
+						</li>
+						<li>Diese grafische Darstellung können wir nutzen, um ein bestehendes Programm zu zeichnen
+							und
+							zu analysieren; oder umgekehrt, um einen Ablauf darzustellen und dann zu implementieren.
+						</li>
+						<li>Wie das aussieht, können Sie <a href="struktogramme.pdf">hier</a> nachlesen.</li>
+						<li>Als Tool für das Zeichnen von Struktogrammen können Sie z.B. <a
+								href="https://draw.io">Draw.io</a> verwenden.</li>
+					</ul>
+				</section>
+				<section id="struktogrammBeispiel">
+					<h2>Struktogramm: Ein Beispiel</h2>
+					<p>Der Ablauf für die Lösung der <a href="#aufgabetheline">Aufgabe "The line"</a> als
+						Struktogramm sieht so aus:</p>
+					<img src="struktogrammBeispiel.png" alt="" style="height: 350px;">
+				</section>
+				<section id="uebungstruktogramme">
+					<h2>Aufgabe: Struktogramme erstellen</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie lernen, Abläufe mit Struktogrammen darzustellen.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ol>
+									<li>Schaffen Sie sich einen Überblick über Struktogramme, indem Sie das <a
+											href="struktogramme.pdf">Script</a> <b>quer</b>lesen.</li>
+									<li>Merken Sie sich die Darstellung von: Linearer Struktur, Schleifen
+										(while-loop),
+										Verzweigung (if-then-else).</li>
+									<li>Zeichnen Sie zwei Programme als Struktogramm. Empfehlung: Wählen Sie zwei
+										Aufgaben aus Block 3, für welche Sie gute Lösungen haben (guten Code).</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Ergebnis</td>
+							<td>Pro Tandem zwei Struktogramme, die die gewählten Programme darstellen, inklusive dem
+								Code.</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>25'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="auswertungStruktogramm">
+					<h2>Aufgabe für die Auswertung des Themas "Struktogramme"</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie prüfen ihre Kollegen, ob diese die Elemente von Struktogrammen anwenden können.
+							</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ul>
+									<li>Bleiben Sie im Tandem von Aufgabe <a href="#uebungstruktogramme">Struktogramme
+											erstellen</a>.</li>
+									<li>Wählen Sie eines ihrer beiden Struktogramme aus.
+									</li>
+									<li>Wählen Sie ein anderes Tandem aus und geben Sie diesen beiden Kollegen das
+										Struktogramm.</li>
+									<li>Die beiden Kollegen haben die Aufgabe, den Code aus dem Struktogramm zu
+										erstellen.</li>
+									<li>Prüfen Sie, ob der Ablauf ihres Codes und der Ablauf des Codes der Kollegen
+										derselbe ist.</li>
+								</ul>
+								Dasselbe machen Sie mit einem Struktogramm eines anderen Tandems.
+
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>30'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="aufgabeRepImperativ">
+					<h2>Rückblick: Das imperative Hamster-Modell</h2>
+					<h3>Auftrag</h3>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ul>
+									<li>Sie arbeiten in Gruppen. Jede Gruppe bekommt ein Thema (bestehend aus
+										einigen
+										Begriffen) zugewiesen.</li>
+									<li>Erstellen Sie eine kurze Präsentation von 3-5' zu ihrem Thema nach folgendem
+										Raster:
+										<ol>
+											<li>Definition/Bechreibung ihrer Begriffe</li>
+											<li>Anwendungszweck oder Nutzen</li>
+											<li>Beispiele mit Code</li>
+										</ol>
+									</li>
+									<li>Ein oder zwei Mitglieder ihrer Gruppe werden ihre Resultate vortragen.</li>
+									<li>Verwenden Sie für die Präsentation den Laptop/Beamer.</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Gruppenarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>Vorbereitung: 20' / Präsentationen: 20'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="objectorientedIntro1">
+					<h2>Hamster-Evolution</h2>
+					<img src="FromImpToObject1.png" alt="">
+				</section>
+				<section id="objectorientedIntro2">
+					<h2>Hamster-Evolution</h2>
+					<img src="FromImpToObject2.png" alt="">
+				</section>
+				<section id="objectorientedIntro3">
+					<h2>Also nochmal: Der Hamster, ein Objekt (Instanz) einer Klasse</h2>
+					<div style="font-size: 0.8em;">
+						<h3>Imperatives Modell</h3>
+						<ul>
+							<li>Es gibt einen Hamster, der automatisch initialisiert wird.</li>
+							<li>Der Hamster kennt 4 vordefinierte Befehle.</li>
+							<li>Der Hamster hat keinen Namen (braucht er auch nicht, er ist ja alleine).</li>
+						</ul>
+						<h3>Objektorientiertes Modell</h3>
+						<ul>
+							<li>"Hamster" ist nicht mehr ein Objekt, sondern eine "Art" (also eine Definition oder
+								Beschreibung von Objekten).</li>
+							<li>Unser Standard-Hamster muss initialiert (erstellt) werden; und es können weitere
+								Hamster
+								erstellt werden.</li>
+							<li>Jeder Hamster bekommt einen Namen - der "Name" ist der Zeiger/Pointer auf den
+								Speicherort eines Hamsters (vgl. <em>Variable</em>).</li>
+							<li>Hamster (also die ganze Art) können mit Fähigkeiten und Attributen erweitert werden.
+							</li>
+							<li>Man kann Subtypen (Unterarten) von Hamstern erstellen, z.B. "Goldhamster", mit
+								anderen
+								Fähigkeiten und Attributen.</li>
+						</ul>
+					</div>
+				</section>
+				<section id="objectorientedIntroExamples1">
+					<h2>Der objektorientierte Hamster im Code</h2>
+					<p>Initialisierung des Standard-Hamsters</p>
+					<pre><code>		Hamster pinky = Hamster.getStandardHamster();</code></pre>
+					<p>Erstellen und initialisieren eines zweiten Hamsters:</p>
+					<pre><code>
+		Hamster brain = new Hamster ();
+		brain.init (3 , 4 , Hamster.NORD , 5);
+					</code></pre>
+					<p>Einen Hamster befehligen:</p>
+					<pre><code>
+		if (brain.vornFrei()) {
+			brain.vor();
+		}
+					</code></pre>
+				</section>
+				<section id="objectorientedExercise">
+					<h2>Objektorientierter Hamster - erste Schritte</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können Hamster im objektorientierten Modell erstellen und steuern.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								<ul>
+									<li>Lesen Sie im Script das Kapitel <a href="script.html#objectorientedmodel">Das
+											objektorientierte Hamster-Modell</a> bis und mit Kapitel
+										"Beispielprogramm".
+									</li>
+									<li>Schreiben Sie sich Fragen auf.</li>
+									<li>Studieren Sie dann das Beispielprogramm zum objektorientierten Hamster.</li>
+									<li>Klären Sie ihre Fragen mit einem Kollegen oder der LP.</li>
+									<li>Lösen Sie die Aufgaben <a
+											href="#objektorientiertesJavaProgramm">"objektorientiertes
+											Java-Programm"</a> und <a
+											href="#objektorientiertesJavaProgramm2">"Hamster-Rennen"</a> als
+										<b>objektorientierte Java-Programme</b>.
+									</li>
+									<li>Expert: Lösen Sie die Aufgabe <a
+											href="#aufgabeImplementierungMethode">"Implementierung einer Methode des
+											Standard-Hamsters"</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>60'</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Mit der Musterlösung.</td>
+						</tr>
+					</table>
+				</section>
+				<section id="objektorientiertesJavaProgramm">
+					<h2>Aufgabe "objektorientiertes Java-Programm"</h2>
+					<p>Lösen Sie diese Aufgabe mit einem objektorientierten Java-Programm. Um ihnen den Start zu
+						erleichtern: Schauen Sie sich nochmal den objektorienterten Code in diesen Folien und im
+						Script
+						an.</p>
+					<h3>Aufgabe</h3>
+					<p>Ein neuer Hamster wird irgendwo in einem beliebig grossen Hamster-Territorium erzeugt. Im
+						Territorium befinden sich keine Mauern, wohl aber der Standard-Hamster. Der erzeugte Hamster
+						bekommt die Aufgabe, den Standard-Hamster zu suchen und auf dessen Kachel stehen zu bleiben.
+						Der
+						Standard-Hamster bewegt sich während der Suche nicht von der Stelle.</p>
+				</section>
+				<section id="objektorientiertesJavaProgramm2">
+					<h2>Aufgabe "Hamster-Rennen"</h2>
+					<p>Lösen Sie diese Aufgabe mit einem objektorientierten Java-Programm. Um ihnen den Start zu
+						erleichtern: Schauen Sie sich nochmal den objektorienterten Code in diesen Folien und im
+						Script
+						an.</p>
+					<h3>Aufgabe</h3>
+					<p>Der Standard-Hamster befindet sich mit Blickrichtung Nord in der rechten unteren Ecke eines
+						mauerlosen Hamster-Territoriums mit mindestens zwei Spalten und zwei Reihen. Ein neuer
+						Hamster
+						wird auf Kachel (0/0) mit Blickrichtung Süd erzeugt. Die beiden Hamster sollen sich entgegen
+						dem
+						Uhrzeigersinn ein Rennen entlang der Wände des Territoriums liefern,
+						bis einer den anderen eingeholt hat. Der neu erzeugte Hamster ist dabei allerdings klar im
+						Vorteil.
+						Er ist doppelt so schnell wie der Standard-Hamster, d.h. jedes Mal, nachdem der
+						Standard-Hamster
+						den Befehl <code>vor()</code> ausgeführt hat, darf der neue Hamster den vor-Befehl zweimal
+						ausführen</p>
+				</section>
+				<section id="aufgabeImplementierungMethode">
+					<h2>Aufgabe "Implementierung einer Methode des Standard-Hamsters"</h2>
+					<p>Überlegen Sie, wie die Methode <em>linksUm()</em> der Klasse Hamster implementiert sein
+						könnte.
+						Orientieren Sie sich dabei an der im Script vorgestellten Implementierung der Methode
+						<em>vor()</em>.
+					</p>
+				</section>
+				<section id="objectorientedIntroExamples2">
+					<h2>Der objektorientierte Hamster im Code: Neue Klassen erstellen</h2>
+					<p>Eine Subklasse erstellen:</p>
+					<pre><code>
+						class DrehHamster extends Hamster {
+							// Definition von Methoden
+							void rechtsUm () {
+							  linksUm();
+							  linksUm();
+							  linksUm();
+							}
+						}
+					</code></pre>
+					<p>Einen Hamster der Subklasse erzeugen:</p>
+					<pre><code>
+						DrehHamster heidi = new DrehHamster();
+						heidi.linksUm();
+						heidi.rechtsUm();
+					</code></pre>
+				</section>
+				<section id="InfoLB1">
+					<h2>LB1: Praktische Prüfung "Hamster"</h2>
+					<ul style="font-size: smaller;">
+						<li>Prüfungsinhalt: Programmieren mit dem imperativen Hamster-Modell
+							<ul>
+								<li>Halten Sie sich an die Lernziele (Slides); diese müssen Sie erfüllt haben.</li>
+								<li><b>Üben Sie das Programmieren!</b> Sie haben dazu Aufgaben erhalten, dürfen sich
+									aber auch selber Aufgaben stellen.</li>
+								<li>Merken Sie sich die Syntax der Hamster-Programmiersprache und die
+									vorimplementierten
+									Befehle.</li>
+								<li>Bereiten Sie ihre Hamster-Umgebung vor. Sie muss an der Prüfung fehlerfrei
+									starten.
+								</li>
+							</ul>
+						</li>
+						<li>Prüfungsmodus: Praktische Prüfung (Hamster-Umgebung), closed book (Ausnahme: Ein
+							A4-Blatt
+							mit eigenen Notizen).</li>
+						<li>Dauer: 60'</li>
+						<li>Termin: 25.09.2024</li>
+						<li>Gewichtung: 30%</li>
+					</ul>
+				</section>
+			</section>
+			<!-- Block 6 -->
+			<section>
+				<section class="toc" id="b6">
+					<h1>Block 6: Übungen & Debugging</h1>
+				</section>
+				<section id="zieleB6">
+					<h2>Block 6: Lernziele</h2>
+					<ul>
+						<li>Ich kann die Werkzeuge, die der Hamster-Simulator für das Debugging bietet, so nutzen,
+							dass
+							ich Syntax- oder semantische Fehler im Code finde.</li>
+					</ul>
+				</section>
+				<section id="ablaufB6">
+					<h2>Ablauf</h2>
+					<ul>
+						<li>Objektorientiert Programmieren: Übungen</li>
+						<li>Debugging: Fehler finden und beheben</li>
+						<li>Übungen zur Prüfungsvorbereitung</li>
+					</ul>
+				</section>
+				<section id="tasksOOP">
+					<h2>OOP: Aufbauende Übungen</h2>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>1.1</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(mit
+									Musterlösung)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung gelöst, indem die Musterlösung
+								nachprogrammiert
+								wurde.</td>
+							<td>20'</td>
+						</tr>
+						<tr>
+							<td>1.2</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(mit
+									Klassen)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung gelöst. Aus der Musterlösung wurde die
+								Klassendefinition kopiert.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>1.3</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(ohne
+									Hilfsmittel)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung und ohne Hilfsmittel gelöst.</td>
+							<td>40'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="bugfixing11">
+					<h2>Bugfixing</h2>
+					<img src="FixBugs.png" alt="">
+				</section>
+				<section id="bugfixing12">
+					<h2>Bugfixing - Fehler finden und beheben</h2>
+					<ol>
+						<li>Syntax-Fehler: Compiler gibt den Fehler aus.
+							<ul>
+								<li>Fehlermeldung genau lesen. Zeilennummer ist ein wichtiger Hinweis, kann aber
+									falsch
+									sein (Fehler liegt davor).</li>
+							</ul>
+						</li>
+						<li>Laufzeitfehler: Während der Programmausführung wird ein Fehler ausgegeben.
+							<ul>
+								<li>Debugger einschalten, schrittweise das Programm analysieren.</li>
+								<li>Debugging mit Breakpoints (more to come).</li>
+							</ul>
+						</li>
+						<li>Semantischer Fehler: Das Programm macht nicht, was es soll.
+							<ul>
+								<li>Ablauf (Flussdiagramm) überprüfen.</li>
+								<li>Debugger einschalten, schrittweise das Programm analysieren.</li>
+							</ul>
+						</li>
+					</ol>
+					<br><br>
+					<b>Fehlermeldungen wollen gelesen werden. Tun Sie sich diesen Gefallen.</b>
+				</section>
+				<section id="tasksPrepLB1_1">
+					<h2>Prüfungsvorbereitung</h2>
+					<p>Grundkenntnisse</p>
+					<p>Für die LB 1 sind die <b>imperativen</b> Aufgaben relevant.</p>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>1</td>
+							<td><a href="#UebungsAufgabeRaum4Ecken">Übung: ...mein Raum der hat vier Ecken...</a>
+							</td>
+							<td>Es existiert Code als <b>imperatives</b> Hamster-Programm, der die Aufgabe für ein
+								beliebig grosses Territorium löst.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>2.1</td>
+							<td><a href="#UebungsAufgabeMulde">Übung: Mulde durchschreiten</a></td>
+							<td>Es existiert Code als <b>imperatives</b> Hamster-Programm, der die Aufgabe für ein
+								beliebiges Territorium mit einer Mulde löst.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>2.2</td>
+							<td><a href="#UebungsAufgabeMulde">Übung: Mulde
+									durchschreiten</a></td>
+							<td>Es existiert Code als <b>objektorientertes</b> Hamster-Programm, der die Aufgabe für
+								ein
+								beliebiges Territorium mit einer Mulde löst und die objektorientierten Features
+								(insb.
+								Klassen und Objekte) nutzt.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>3.1</td>
+							<td><a href="#UebungsAufgabeWalkTheWall">Übung: Walk the wall</a></td>
+							<td>Es existiert Code als <b>imperatives</b> Hamster-Programm, der die Aufgabe für ein
+								beliebiges Territorium gemäss der Aufgabenstellung löst.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>3.2</td>
+							<td><a href="#UebungsAufgabeWalkTheLine">Übung: Walk the line</a></td>
+							<td>Es existiert Code als <b>objektorientertes</b> Hamster-Programm, der die Aufgabe für
+								ein
+								beliebiges Territorium gemäss der Aufgabenstellung löst und die objektorientierten
+								Features (insb. Klassen und Objekte) nutzt.</td>
+							<td>30'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="tasksPrepLB1_2">
+					<h2>Prüfungsvorbereitung</h2>
+					<p>Grundkenntnisse</p>
+					<p>Für die LB 1 sind die <b>imperativen</b> Aufgaben relevant.</p>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>4.1</td>
+							<td>Gruppen-Übung: <a href="#UebungsAufgabeSlalom">Slalom</a> oder <a
+									href="#UebungsAufgabeSlalom2">Parallel-Slalom</a></td>
+							<td>Es existiert Code als <b>imperatives</b> oder <b>objektorientertes</b>
+								Hamster-Programm,
+								der die Aufgabe löst. Sie Programmieren in der <b>Gruppe</b>.</td>
+							<td>45'</td>
+						</tr>
+						<tr>
+							<td>4.2</td>
+							<td>Waren Sie noch unsicher in der Gruppenübung? Lösen Sie die <a
+									href="#UebungsAufgabeSlalomKorn">Übung: Slalom mit Korn</a> alleine.</td>
+							<td>Es existiert Code als <b>imperatives</b> oder <b>objektorientertes</b>
+								Hamster-Programm,
+								der die Aufgabe löst.</td>
+							<td>45'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="tasksPrepLB1_3">
+					<h2>Prüfungsvorbereitung</h2>
+					<p>Erweiterte Kenntnisse</p>
+					<p>Für die LB 1 sind die <b>imperativen</b> Aufgaben relevant.</p>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>8</td>
+							<td>Übungen <a href="#UebungsAufgabeAbbildHamster">Abbild-Hamster</a>, <a
+									href="#UebungsAufgabeAbbildHamster2">Abbild-Hamster (schwierigere Variante)</a>,
+								<a href="#UebungsAufgabeAddition">Additions-Hamster</a> und <a
+									href="#UebungsAufgabeVermesser">Der Vermesser</a>
+							</td>
+							<td>Es existiert Code als <b>objektorientertes</b> Hamster-Programm, der die Aufgabe
+								löst.
+							</td>
+							<td>40'</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 7 -->
+			<section>
+				<section class="toc" id="b7">
+					<h1>Block 7: LB1 & objektorientierte Programmierung</h1>
+				</section>
+				<section id="zieleB7">
+					<h2>Block 7: Lernziele</h2>
+					<ul>
+						<li>Ich kann erklären, wie mittels Klassen neue Datentypen erstellt werden können.</li>
+						<li>Ich kann Klassen mit dem Hamster-Simulator erstellen und verwenden.</li>
+						<li>Ich kann die Objekte (Instanzen von Klassen) mit dem Hamster-Simulator erstellen und
+							verwenden.</li>
+					</ul>
+				</section>
+				<section id="ablaufB7">
+					<h2>Ablauf</h2>
+					<ul>
+						<li>LB 1</li>
+						<li>Review zur objektorienterten Programmierung im Plenum</li>
+						<li>Übungen: Objektorientierte Programmierung</li>
+					</ul>
+				</section>
+				<section id="LB1Intro">
+					<h2>LB 1: Informationen</h2>
+					<ul>
+						<li>Auf ihrem Laptop darf nur ein Git-Client und der Hamster-Simulator geöffnet sein.</li>
+						<li>Die Resultate müssen als .ham-Files in codevogel abgegeben werden.</li>
+						<li>In welcher Reihenfolge Sie die Aufgaben lösen und abgeben, ist egal.</li>
+						<li>Ihre Lösungen müssen <em>dynamisch</em> sein. Nutzen Sie dafür Kontrollstrukturen.</li>
+						<li>Ihr Code muss aufgeräumt und formatiert sein, insbesondere die Einrückung (indentation)
+							muss
+							korrekt sein.</li>
+						<li>Die Prüfung dauert 60'.</li>
+						<li>Die Bewertung erfolgt nach diesem <a href="BewertungsrasterLB1.png">Bewertungsraster</a>.
+						</li>
+					</ul>
+				</section>
+				<section id="LB1Git">
+					<h2>LB 1: Abgabe in GIT</h2>
+					<ul style="font-size: 0.8em;">
+						<li>Öffnen Sie die gitBash.</li>
+						<li>Navigieren Sie mit <code>cd</code> in den Ordner <b>Programme</b> des Hamstersimulators.<br>
+							Beispiel: <code>cd /c/Games/hamstersimulator-v29-06/Programme</code>.<br>
+							Hinweis: Wenn Sie den Ordner Programme (des Hamstersimulators) im File-Explorer mit Drag &
+							Drop in die gitBash ziehen, wird der Pfad korrekt kopiert.
+						</li>
+						<li>Klonen Sie ihr Prüfungsprojekt mit <code>git clone [url]</code>.<br>
+							Die <code>[url]</code> finden Sie auf der Weboberfläche (codevogel) beim blauen Code-Button
+							→ Clone with https.<br>
+							Befehl ohne <code>[]</code> eingeben, z.B.
+							<code>git clone https://codevogel.ch/2025-m319/lb1/aa-kohler.git</code>.
+						</li>
+						<li>Wechseln Sie mit <code>cd</code> in das (gerade geklonte) Projektverzeichnis, z.B. mit
+							<code>cd aa-kohler</code>.
+						</li>
+						<li>Pro Aufgabe existiert ein Unterordner. Lösen Sie die Aufgabe und legen Sie ihre Lösung
+							(.ham-Datei) dort ab.</li>
+						<li>Fügen Sie alle Änderungen mit <code>git add</code> hinzu und committen Sie diese mit
+							<code>git commit -m "Meine Lösung für Aufgabe X"</code>.
+						</li>
+						<li>Am Schluss machen Sie <code>git push</code>, um Ihre Änderungen auf den Server zu
+							übertragen.</li>
+						<li>Kontrollieren Sie auf der Weboberfläche (codevogel), ob Ihre Änderungen übertragen wurden.
+						</li>
+					</ul>
+					</ul>
+				</section>
+				<section id="LB1A1" data-visibility="hidden">
+					<h2>LB 1: Aufgabe 1</h2>
+					<p style="font-size: 0.8em;">Das ist eine imperative Aufgabe.<br>
+						Der Hamster befindet sich am linken Ende einer beliebig langen Strecke. Er soll nach rechts
+						laufen und nach dem ersten Schritt ein Korn ablegen, dann zwei Felder vor laufen und zwei
+						Körner
+						ablegen, dann drei Felder vor laufen und drei Körner ablegen und so weiter.<br>
+						Der Hamster hat genügend Körner im Maul.<br>
+						Das Programm endet, wenn der Hamster auf die Wand rechts trifft.</p>
+					<h4>Vor dem Start des Programms</h4>
+					<img src="LB1A1.png" alt="">
+					<h4>Nach dem Durchlauf des Programms</h4>
+					<img src="LB1A1nach.png" alt="">
+				</section>
+				<section id="LB1A2-1" data-visibility="hidden">
+					<h2>LB 1: Aufgabe 2 (erster Teil)</h2>
+					<p style="font-size: 0.8em;">Das ist eine imperative Aufgabe.
+						Die Aufgabe besteht aus zwei Teilaufgaben:<br>
+						Erste Teilaufgabe:<br>
+						Der Hamster soll tanzen. Er befindet sich oben links im quadratischen Ballsaal. Da Hamster
+						ein
+						kleines Gehirn haben, ist seine Choreographie einfach: Er soll im ZickZack durch den
+						Ballsaal
+						laufen, bis er auf der untersten Zeile angekommen ist. Dann endet das Programm. Er ignoriert die
+						Körner.
+					</p>
+					<img src="LB1A2.png" alt="" height="400px">
+				</section>
+				<section id="LB1A2-2" data-visibility="hidden">
+					<h2>LB 1: Aufgabe 2 (zweiter Teil)</h2>
+					<p style="font-size: 0.8em;">
+						Zweite Teilaufgabe:<br>
+						Diese kann gelöst werden, sobald die erste Teilaufgabe gelöst ist.<br>
+						Der Hamster hat einen neuen Tanzschritt gelernt. Immer dann, wenn er auf seinem Weg durch
+						den
+						Ballsaal auf Körner trifft, soll er sich so oft um sich selbst drehen, wie Körner
+						auf
+						dem Boden
+						liegen. Wenn zum Beispiel ein Korn auf dem Boden liegt, dreht er sich einmal um 360 Grad. Ob
+						die
+						Körner aufgenommen oder liegen gelassen werden, ist egal.
+						Danach soll er weitertanzen, bis er auf weitere Körner trifft oder unten rechts angekommen
+						ist.
+					</p>
+					<img src="LB1A2.png" alt="" height="350px">
+				</section>
+				<section id="tasksOOP2">
+					<h2>OOP: Aufbauende Übungen</h2>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>1.1</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(mit
+									Musterlösung)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung gelöst, indem die Musterlösung
+								nachprogrammiert
+								wurde.</td>
+							<td>20'</td>
+						</tr>
+						<tr>
+							<td>1.2</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(mit
+									Klassen)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung gelöst. Aus der Musterlösung wurde die
+								Klassendefinition kopiert.</td>
+							<td>30'</td>
+						</tr>
+						<tr>
+							<td>1.3</td>
+							<td><a href="#AufgabeObjektorientiertTreppenHamster">Aufgabe: Ein objektorientertes
+									Hamster-Programm
+									(ohne
+									Hilfsmittel)</a></td>
+							<td>Die Aufgabe ist gemäss Aufgabenstellung und ohne Hilfsmittel gelöst.</td>
+							<td>40'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="uebungenOOP">
+					<h2>OOP: Weitere Aufgaben</h2>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>2.1</td>
+							<td><a href="#UebungsAufgabeWalkTheLine">Aufgabe: Walk the wall objektorientiert</a></td>
+							<td></td>
+							<td>20'</td>
+						</tr>
+						<tr>
+							<td>2.2</td>
+							<td><a href="#UebungsAufgabeSlalom2">Aufgabe: Parallel-Slalom</a></td>
+							<td></td>
+							<td>30'</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 8 -->
+			<section>
+				<section class="toc" id="b8">
+					<h1>Block 8: Übungen zu objektorientierter Programmierung</h1>
+				</section>
+				<section id="zieleB8">
+					<h2>Block 8: Lernziele</h2>
+					<ul>
+						<li>Ich kann im Hamstersimulator Klassen erstellen und sie mit eigenen procedures erweitern.
+						</li>
+						<li>Ich kann im Hamstersimulator Klassen erstellen, die von anderen Klassen erben
+							(<code>extends</code>).</li>
+						<li>Ich kann im Hamstersimulator Objekte (Instanzen von Klassen) erstellen und verwenden.</li>
+					</ul>
+				</section>
+				<section id="ablaufB8">
+					<h2>Ablauf</h2>
+					<p>Sie festigen in dieser Lektion die objektorienterten Konzepte mit Programmierübungen.</p>
+					<ol style="font-size: 0.8em;">
+						<li>Arbeiten Sie an den <a href="#tasksOOP2">aufbauenden Aufgaben</a> und den <a
+								href="#uebungenOOP">Übungsaufgaben</a> gemäss Block 7.
+							<ul>
+								<li>Verwenden Sie dabei die objektorienterten Konzepte: Eigene Klassen, Vererbung,
+									Objekte von Klassen instanzieren.</li>
+								<li>Pushen Sie ihre Lösungen in codevogel (Projekt <a
+										href="https://codevogel.ch/2025-m319/hamster">hamster</a>, in ihren Ordner.
+								</li>
+								<li>Ziel ist, dass Sie eine Aufgabe wie den Parallel-Slalom (siehe Übungsaufgaben)
+									objektorientiert lösen
+									können.</li>
+							</ul>
+						</li>
+						<li>Sobald Sie bereit sind für weitere Herausforderungen, finden Sie diese in Codevogel:
+							<ul>
+								<li><a
+										href="https://codevogel.ch/m319-2025/m319/-/blob/main/block/05/tasks/02/readme.md">Abbild-Hamster
+										(objektorientiert)</a></li>
+								<li><a
+										href="https://codevogel.ch/m319-2025/m319/-/blob/main/block/05/tasks/04/readme.md">Binary
+										Area (objektorientiert)</a></li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+			</section>
+			<!-- Block 9 -->
+			<section>
+				<section class="toc" id="b9">
+					<h1>Block 9:<br />OO-Programmierung und Java</h1>
+				</section>
+				<section id="ablaufB9">
+					<h2>Ablauf</h2>
+					<table style="border-top: 1px solid; border-bottom: 1px solid;">
+						<tr>
+							<td colspan="2" style="text-align: center; background-color: lightgray;">LB 2: Termin,
+								Vorbereitung</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center; color: #666666;">LB1 nachholen</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;"><a href="#tasksOOP2">OO-Programmierung:
+									Auswertung</a></td>
+						</tr>
+						<tr>
+							<td rowspan="3" style="text-align: center; vertical-align: middle;"><a
+									href="#ablaufB8">Übungen zu
+									OO</a><br />(Prüfungsvorbereitung)</td>
+							<td style="text-align: center; background-color: lightgray;">Java Programmierung Intro</td>
+						</tr>
+						<tr>
+							<td style="text-align: center; background-color: lightgray;">Java Datentypen</td>
+						</tr>
+						<tr>
+							<td style="text-align: center;"><a href="#javaProgrammierung">Java Aufgaben</a></td>
+						</tr>
+					</table>
+				</section>
+				<section id="Java">
+					<h2>Java - die Hamster-Programmiersprache mit dem Kaffee</h2>
+					<ul>
+						<li>Java ist eine weit verbreitete, <strong>objektorientierte</strong> Programmiersprache und
+							Plattform zur Entwicklung von Anwendungen verschiedenster Art.</li>
+						<li>Java-Code wird in plattformunabhängigen Bytecode kompiliert und auf der <b>Java Virtual
+								Machine (JVM)</b> ausgeführt.</li>
+						<li>Die Sprache legt Wert auf Sicherheit, Stabilität und ein grosses Ökosystem an Bibliotheken
+							und Werkzeugen. Sie nutzt viele (komplexe) Konstrukte, um die Programmierung fehlerfreier zu
+							machen (ein einfaches Beispiel: <b>Datentypen</b>).</li>
+						<li>Der Name Java ist eine Anspielung auf Kaffee (Java als Slangwort für Kaffee) und soll
+							Energie sowie Verlässlichkeit symbolisieren.</li>
+					</ul>
+				</section>
+				<section id="javaVariablesAnkommen">
+					<h2>Review: Datentypen und Variablen beim Hamster</h2>
+					<ul>
+						<li>Variable: Datentyp, Name, Wert</li>
+						<li>Wir unterscheiden <em>Deklaration</em> und <em>Initialisierung</em></li>
+					</ul>
+					<pre><code style="font-size: 1.3em;">
+						int preisAudi = 50000;
+						preisAudi = preisAudi + 1000;
+						int preisCadillac = 60000;
+						int preisBeide;
+						preisBeide = preisAudi + preisCadillac;
+						
+						boolean isAudiMoreExpensive = preisAudi > preisCadillac;
+					</code></pre>
+				</section>
+				<section id="javaDataTypes">
+					<h2>Primitive Datentypen in Java</h2>
+					<table style="font-size: 0.7em;">
+						<thead>
+							<tr>
+								<th>Kategorie</th>
+								<th>Datentyp</th>
+								<th>Grösse [Bit]</th>
+								<th>Initialisierungs-wert</th>
+								<th>Wertebereich <br> (MIN MAX)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Wahrheitswert</td>
+								<td style="color: blueviolet; font-weight: bold;">boolean</td>
+								<td>1</td>
+								<td><em>false</em></td>
+								<td>
+									<em>true</em>, <em>false</em>
+								</td>
+							</tr>
+							<tr>
+								<td>Bytezahl</td>
+								<td>byte</td>
+								<td>8</td>
+								<td>0</td>
+								<td>-128 … +127</td>
+							</tr>
+							<tr>
+								<td>Kleine Ganzzahl</td>
+								<td>short</td>
+								<td>16</td>
+								<td>0</td>
+								<td>-32'768 … +32'767</td>
+							</tr>
+							<tr>
+								<td>Mittlere Ganzzahl</td>
+								<td style="color: blueviolet; font-weight: bold;">int</td>
+								<td>32</td>
+								<td>0</td>
+								<td>-2'147'483'648 … +2'147'483'647</td>
+							</tr>
+							<tr>
+								<td>Grosse Ganzzahl</td>
+								<td>long</td>
+								<td>64</td>
+								<td>0</td>
+								<td>-2^63 … +(2^63)-1 <br> = <br> -9.2233…e18 … +9.2233…e18</td>
+							</tr>
+							<tr>
+								<td>Reelle Zahl mit 7 Stellen Genauigkeit</td>
+								<td>float</td>
+								<td>32</td>
+								<td>0.0f</td>
+								<td>±1.4…×10^-38 … ±3.4…×10^+38</td>
+							</tr>
+							<tr>
+								<td>Reelle Zahl mit 14 Stellen Genauigkeit <br> (doppelte Genauigkeit)</td>
+								<td>double</td>
+								<td>64</td>
+								<td>0.0</td>
+								<td>±4.9…×10^-324 … ±1.8…×10^+308</td>
+							</tr>
+							<tr>
+								<td>Ein Buchstabe aus dem UTF-16 Charset <br> (mit ' begrenzt!)</td>
+								<td>char</td>
+								<td>16</td>
+								<td>'\u0000'</td>
+								<td>'\u0000' … '\uFFFF' <br> Beispiele: 'a' '€'</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section id="javaVariables">
+					<h2>Variablen in Java</h2>
+					<h3>Deklaration</h3>
+					<pre style="font-size: 0.7em;"><code>
+						int anzahl;
+						double preis;
+					</code></pre>
+					<h3>Initialisierung</h3>
+					<pre style="font-size: 0.7em;"><code>
+						anzahl = 5;
+						preis = 9.95;
+					</code></pre>
+					<h3>Deklaration und Initialisierung</h3>
+					<pre style="font-size: 0.7em;"><code>
+						int anzahl = 5;
+						double preis = 9.95;
+					</code></pre>
+				</section>
+				<section id="javaComplexDataTypes">
+					<h2>Primitive vs. komplexe Datentypen</h2>
+					<table style="font-size: 0.7em;">
+						<thead>
+							<tr>
+								<th>Kategorie</th>
+								<th>Standard-Datentyp</th>
+								<th>Wrapper-Klasse</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Wahrheitswert</td>
+								<td>boolean</td>
+								<td>java.lang.<strong>Boolean</strong></td>
+							</tr>
+							<tr>
+								<td>Bytezahl</td>
+								<td>byte</td>
+								<td>java.lang.<strong>Byte</strong></td>
+							</tr>
+							<tr>
+								<td>Kleine Ganzzahl</td>
+								<td>short</td>
+								<td>java.lang.<strong>Short</strong></td>
+							</tr>
+							<tr>
+								<td>Mittlere Ganzzahl</td>
+								<td>int</td>
+								<td>java.lang.<strong>Integer</strong></td>
+							</tr>
+							<tr>
+								<td>Grosse Ganzzahl</td>
+								<td>long</td>
+								<td>java.lang.<strong>Long</strong></td>
+							</tr>
+							<tr>
+								<td>Reelle Zahl mit 7 Stellen Genauigkeit</td>
+								<td>float</td>
+								<td>java.lang.<strong>Float</strong></td>
+							</tr>
+							<tr>
+								<td>Reelle Zahl mit 14 Stellen Genauigkeit <br> (doppelte Genauigkeit)</td>
+								<td>double</td>
+								<td>java.lang.<strong>Double</strong></td>
+							</tr>
+							<tr>
+								<td>Ein Buchstabe aus dem UTF-16 Charset (mit ' begrenzt!)</td>
+								<td>char</td>
+								<td>java.lang.<strong>Character</strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section id="javaProgrammierung">
+					<h2>Java Aufgaben</h2>
+					<table style="font-size: 0.7em;">
+						<th>
+						<td>Task</td>
+						<td>DoD</td>
+						<td>Richtzeit</td>
+						</th>
+						<tr>
+							<td>0</td>
+							<td>Installation IntelliJ IDEA</td>
+							<td>IntelliJ kann gestartet werden, die Lizenz ist implementiert.</td>
+							<td>15'</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><a href="#HelloWorldinIntelliJ"><em>Hello World</em> als Java-Programm</a></td>
+							<td><em>Hello World</em> ist in IntelliJ programmiert, kompiliert und kann
+								ausgeführt
+								werden.</td>
+							<td>15'</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Java-Übungen</td>
+							<td>Sie wählen beliebige <a href="https://www.w3resource.com/java-exercises/basic/index.php"
+									target="_blank">Übungen</a>
+								aus,
+								programmieren sie in IntelliJ und prüfen ihre Lösung selbst.</td>
+							<td>45'</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><a href="#AufgabeJavaUI">Programme mit GUI</a> in Java erstellen</td>
+							<td>Sie erstellen ein einfaches GUI-Programm in Java, das Benutzereingaben
+								entgegennimmt, verarbeitet und ausgibt.</td>
+							<td>60'</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td><a href="#javaDataTypesExercise">Datentypen in Java</a> nutzen</td>
+							<td>Sie erstellen ein einfaches Programm in Java, das verschiedene Datentypen
+								verwendet.</td>
+							<td>60'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="HelloWorldinIntelliJ">
+					<h2>Hello World als Java-Programm</h2>
+					<table style="font-size: 0.8em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie können in IntelliJ ein Java-Programm erstellen, kompilieren und ausführen.
+							</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Sie sollen ein möglichst einfaches Programm erstellen. Dazu gehen Sie
+								wie folgt vor:
+								<ol>
+									<li>Finden Sie heraus, was ein "Hello World Programm" ist, indem Sie
+										im
+										Internet recherchieren oder KI nutzen.</li>
+									<li>Finden Sie ein Tutorial oder eine Beschreibung, die ihnen
+										erklärt,
+										wie
+										ein <em>Hello World</em> in IntelliJ erstellt wird. Das Tutorial
+										soll
+										ihnen das Erstellen, Kompilieren und Ausführen des Programms in
+										IntelliJ
+										zeigen.</li>
+									<li>Arbeiten Sie ihr Tutorial durch, bis ihr <em>Hello World</em>
+										die
+										geforderte
+										Ausgabe erstellt.</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Einzelarbeit</td>
+						</tr>
+						<tr>
+							<td>Auswertung</td>
+							<td>Im Plenum</td>
+						</tr>
+					</table>
+				</section>
+				<section id="AufgabeJavaUI">
+					<h2>Übung für Fortgeschrittene: Java GUI</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie lernen, einfache GUI-Elemente mit einem Java-GUI Framework zu erstellen.
+							</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Sie sollen selbständig erlernen, wie Sie mit Java GUI-Elemente erstellen. Die
+								einfachste
+								Anwendung ist, einen Text innerhalb eines "Fensters" anzuzeigen.<br>
+								Sie sind frei darin, andere Anwendungen auszudenken und zu implementieren.
+								<ul>
+									<li>Stellen Sie einer KI die Frage: "how can i create a gui element with
+										java
+										with
+										only a few lines of code"</li>
+									<li>Erstellen Sie dann ein neues Projekt in IntelliJ. Im Dialog "neues
+										Projekt"
+										wählen Sie die packages aus, die Sie für ihr GUI brauchen (z.B. das
+										package
+										"swing").</li>
+									<li>Erstellen Sie ihre Applikation. Starten Sie im <code>main()</code>.</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Ergebnis</td>
+							<td>Eine Applikation, die ein GUI-Element anzeigt, aus IntelliJ gestartet.</td>
+						</tr>
+					</table>
+				</section>
+				<section id="javaDataTypesExercise">
+					<h2>Übung: Datentypen in Java</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Ziel</td>
+							<td>Sie üben, verschiedene Datentypen in Java anzuwenden.</td>
+						</tr>
+						<tr>
+							<td>Auftrag</td>
+							<td>
+								Erstellen Sie ein einfaches Taschenrechner-Programm, das Folgendes macht:
+								<ul>
+									<li>Bitten Sie den Benutzer, zwei Zahlen einzugeben (beide können Ganzzahlen
+										oder
+										Dezimalzahlen sein).</li>
+									<li>Bitten Sie den Benutzer, eine grundlegende arithmetische Operation
+										auszuwählen
+										(+, -, *, /).</li>
+									<li>Führen Sie die Operation durch und zeigen Sie das Ergebnis an.</li>
+									<li>Verwenden Sie eine boolean-Variable, um zu steuern, ob der Benutzer
+										weitere
+										Berechnungen durchführen oder das Programm beenden möchte.</li>
+								</ul>
+								Eine Beispielausgabe finden Sie auf <a href="#BeispielausgabeTR">dem nächsten
+									Slide</a>.<br>
+								Das template eines Java-Programms für diesen Taschenrechner liegt im main-branch
+								unseres
+								<a href="https://codevogel.ch/m319-INPEB-2024/m319javademoproject/-/tree/main"
+									target="_blank">Projekts</a>.
+							</td>
+						</tr>
+						<tr>
+							<td>Form</td>
+							<td>Tandem</td>
+						</tr>
+						<tr>
+							<td>Zeit</td>
+							<td>60'</td>
+						</tr>
+					</table>
+				</section>
+				<section id="BeispielausgabeTR">
+					<h2>Beispielausgabe für den Taschenrechner</h2>
+					<pre>
+						<code>
+Geben Sie die erste Zahl ein: 5
+Geben Sie die zweite Zahl ein: 2
+Wählen Sie eine Operation (+, -, *, /): +
+Ergebnis: 7.0
+Möchten Sie eine weitere Berechnung durchführen? (y/n): y
+
+Geben Sie die erste Zahl ein: 10.5
+Geben Sie die zweite Zahl ein: 4.5
+Wählen Sie eine Operation (+, -, *, /): *
+Ergebnis: 47.25
+Möchten Sie eine weitere Berechnung durchführen? (y/n): n
+
+Auf Wiedersehen!
+						</code>
+					</pre>
+				</section>
+				<section id="LB1Intro">
+					<h2>LB 1: Informationen</h2>
+					<ul>
+						<li>Auf ihrem Laptop darf nur ein Git-Client und der Hamster-Simulator geöffnet sein.</li>
+						<li>Die Resultate müssen als .ham-Files in codevogel abgegeben werden.</li>
+						<li>In welcher Reihenfolge Sie die Aufgaben lösen und abgeben, ist egal.</li>
+						<li>Ihre Lösungen müssen <em>dynamisch</em> sein. Nutzen Sie dafür Kontrollstrukturen.</li>
+						<li>Ihr Code muss aufgeräumt und formatiert sein, insbesondere die Einrückung (indentation)
+							muss
+							korrekt sein.</li>
+						<li>Die Prüfung dauert 60'.</li>
+						<li>Die Bewertung erfolgt nach diesem <a href="BewertungsrasterLB1.png">Bewertungsraster</a>.
+						</li>
+					</ul>
+				</section>
+				<section id="LB1Git">
+					<h2>LB 1: Abgabe in GIT</h2>
+					<ul style="font-size: 0.8em;">
+						<li>Öffnen Sie die gitBash.</li>
+						<li>Navigieren Sie mit <code>cd</code> in den Ordner <b>Programme</b> des Hamstersimulators.<br>
+							Beispiel: <code>cd /c/Games/hamstersimulator-v29-06/Programme</code>.<br>
+							Hinweis: Wenn Sie den Ordner Programme (des Hamstersimulators) im File-Explorer mit Drag &
+							Drop in die gitBash ziehen, wird der Pfad korrekt kopiert.
+						</li>
+						<li>Klonen Sie ihr Prüfungsprojekt mit <code>git clone [url]</code>.<br>
+							Die <code>[url]</code> finden Sie auf der Weboberfläche (codevogel) beim blauen Code-Button
+							→ Clone with https.<br>
+							Befehl ohne <code>[]</code> eingeben, z.B.
+							<code>git clone https://codevogel.ch/2025-m319/lb1/aa-kohler.git</code>.
+						</li>
+						<li>Wechseln Sie mit <code>cd</code> in das (gerade geklonte) Projektverzeichnis, z.B. mit
+							<code>cd aa-kohler</code>.
+						</li>
+						<li>Pro Aufgabe existiert ein Unterordner. Lösen Sie die Aufgabe und legen Sie ihre Lösung
+							(.ham-Datei) dort ab.</li>
+						<li>Fügen Sie alle Änderungen mit <code>git add</code> hinzu und committen Sie diese mit
+							<code>git commit -m "Meine Lösung für Aufgabe X"</code>.
+						</li>
+						<li>Am Schluss machen Sie <code>git push</code>, um Ihre Änderungen auf den Server zu
+							übertragen.</li>
+						<li>Kontrollieren Sie auf der Weboberfläche (codevogel), ob Ihre Änderungen übertragen wurden.
+						</li>
+					</ul>
+					</ul>
+				</section>
+				<section id="LB12A1" data-visibility="hidden">
+					<h2>LB 1.2: Aufgabe 1 (1/2)</h2>
+					<ul style="font-size: 0.8em;">
+						<li>Das ist eine imperative Aufgabe.</li>
+						<li>Der Hamster kennt die Dimensionen des Territoriums nicht.</li>
+						<li>Der Hamster soll die Fläche des Territoriums ausmessen und berechnen (Höhe x
+							Breite). Im
+							Beispiel ist die
+							Fläche 35.</li>
+						<li>Der Hamster soll so viele Körner in die Mitte des Territoriums legen, wie die Fläche
+							beträgt
+							(im Beispiel: 35 Körner).</li>
+						<li>Die Höhe und die Breite des Territoriums sind ungerade Zahlen. Es gibt also eine
+							klar
+							definierte Mitte.</li>
+						<li>Der Hamster startet mit genügend Körnern im Maul.</li>
+					</ul>
+					<table>
+						<tr>
+							<td>Vor dem Start des Programms</td>
+							<td>Nach dem Durchlauf des Programms</td>
+						</tr>
+						<tr>
+							<td><img src="LB12A1vor.png" alt=""></td>
+							<td><img src="LB12A1nach.png" alt=""></td>
+						</tr>
+					</table>
+				</section>
+				<section id="LB12A1_" data-visibility="hidden">
+					<h2>LB 1.2: Aufgabe 1 (2/2)</h2>
+					<h3>Tipps</h3>
+					<p>
+					<ul>
+						<li>Der Operator / entspricht der Division<br>(Beispiel:
+							<code>int mitte=breite/2</code>).
+						</li>
+						<li>Wenn Sie eine int teilen, bekommen Sie immer eine ganze Zahl, wobei die
+							Dezimalstellen
+							einfach abgeschnitten werden.</li>
+						<li>Strukturieren Sie ihr Programm mit Funktionen. Nutzen Sie für Funktionen die
+							Konzepte
+							<em>Parameter</em> und <em>Rückgabewert</em>.
+						</li>
+						<li>Treffen Sie Entscheidungen mit if/else.</li>
+						<li>Wiederholen Sie Befehle mit der while-Schleife.</li>
+						<li>Nutzen Sie lokale oder globale Variablen, wenn sich der Hamster etwas (z.B. eine
+							Zahl)
+							merken soll.</li>
+						<li style="font-weight: bold;">Falls Sie die Mitte nicht ermitteln können: Legen Sie die
+							Körner
+							irgendwo ab. Der Punktabzug dazu ist kleiner, als wenn Sie keine kompilierende
+							Lösung
+							abgeben.</li>
+					</ul>
+					</p>
+				</section>
+				<section id="LB12A2" data-visibility="hidden">
+					<h2>LB 1.2: Aufgabe 2 (1/2)</h2>
+					<ul style="font-size: 0.8em;">
+						<li>Das ist eine imperative Aufgabe.</li>
+						<li>Der Hamster befindet sich vor einer beliebigen Grube. Die Grube hat nur eine Senke.
+						</li>
+						<li>Der Hamster soll alle Körner, die er im Maul hat, an der tiefsten Stelle der Grube
+							ablegen.
+						</li>
+						<li>Der Hamster soll danach die Grube fertig durchqueren und an der obersten Stelle ganz
+							rechts
+							stehen bleiben.</li>
+					</ul>
+					<table>
+						<tr>
+							<td>Vor dem Start des Programms</td>
+							<td>Nach dem Durchlauf des Programms</td>
+						</tr>
+						<tr>
+							<td><img src="LB12A2vor.png" alt=""></td>
+							<td><img src="LB12A2nach.png" alt=""></td>
+						</tr>
+					</table>
+				</section>
+				<section id="LB12A2_" data-visibility="hidden">
+					<h2>LB 1.2: Aufgabe 2 (2/2)</h2>
+					<h3>Tipps</h3>
+					<p>
+					<ul>
+						<li>Überlegen Sie sich zuerst den Ablauf für das Programm.</li>
+						<li>Dieser Ablauf besteht aus einzelnen Aktionen und Abfragen, wie zum Beispiel: gehvor,
+							untenFrei, falle, steige etc.</li>
+						<li>Erstellen Sie für diese Aktionen je eine procedure und programmieren Sie aus den
+							Einzelschritten den Ablauf.</li>
+					</ul>
+					</p>
+				</section>
+			</section>
+			<!-- Block 10 -->
+			<section>
+				<section class="toc" id="b10">
+					<h1>Block 10:<br />OO-Programmierung und Java (2)</h1>
+				</section>
+				<section id="ablaufB10">
+					<h2>Ablauf</h2>
+					<table style="border-top: 1px solid; border-bottom: 1px solid;">
+						<tr>
+							<td colspan="2" style="text-align: center; color: #666666;">LB1 nachholen</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;"><a href="#tasksOOP2">OO-Programmierung:
+									Auswertung</a></td>
+						</tr>
+						<tr>
+							<td rowspan="2" style="text-align: center; vertical-align: middle;"><a
+									href="#ablaufB8">Übungen zu
+									OO</a><br />(Prüfungsvorbereitung)</td>
+							<td style="text-align: center;"><a href="#javaProgrammierung">Java Aufgaben</a></td>
+						</tr>
+						<tr>
+							<td>Zeigen Sie der LP ihre Resultate!</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<!-- Block 11 -->
+			<section>
+				<section class="toc" id="b11">
+					<h1>Block 11:<br />LB 2 & Java-Projekt</h1>
+				</section>
+				<section id="ablaufB11">
+					<h2>Ablauf</h2>
+					<table style="border-top: 1px solid; border-bottom: 1px solid;">
+						<tr>
+							<td style="text-align: center;">LB2</td>
+						</tr>
+						<tr>
+							<td style="text-align: center;"><a href="#javaProgrammierung">Java Aufgaben</a><br/>Erstellen Sie eine Java-Software in IntelliJ IDEA. Erstellen Sie einen neuen Ordner in ihrem Git-Repository und pushen Sie ihr Projekt.</td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">Präsentation einiger Projekte.</td>
+						</tr>
+					</table>
+				</section>
+				<section id="LB2Intro">
+					<h2>LB 2: Informationen</h2>
+					<ul>
+						<li>Auf ihrem Laptop darf nur ein Git-Client und der Hamster-Simulator geöffnet sein.</li>
+						<li>Die Resultate müssen als .ham-Files in codevogel abgegeben werden.</li>
+						<li>In welcher Reihenfolge Sie die Aufgaben lösen und abgeben, ist egal.</li>
+						<li>Ihre Lösungen müssen <em>dynamisch</em> sein. Nutzen Sie dafür Kontrollstrukturen.</li>
+						<li>Ihr Code muss aufgeräumt und formatiert sein, insbesondere die Einrückung (indentation)
+							muss korrekt sein.</li>
+						<li>Die Prüfung dauert 60'.</li>
+						<li>Die Bewertung erfolgt nach diesem <a href="BewertungsrasterLB2.png">Bewertungsraster</a>.
+						</li>
+					</ul>
+				</section>
+				<section id="LB2Git">
+					<h2>LB 2: Abgabe in GIT</h2>
+					<ul style="font-size: 0.8em;">
+						<li>Öffnen Sie die gitBash.</li>
+						<li>Navigieren Sie mit <code>cd</code> in den Ordner <b>Programme</b> des Hamstersimulators.<br>
+							Beispiel: <code>cd /c/Games/hamstersimulator-v29-06/Programme</code>.<br>
+							Hinweis: Wenn Sie den Ordner Programme (des Hamstersimulators) im File-Explorer mit Drag &
+							Drop in die gitBash ziehen, wird der Pfad korrekt kopiert.
+						</li>
+						<li>Klonen Sie ihr Prüfungsprojekt mit <code>git clone [url]</code>.<br>
+							Hinweis: Es handelt sich um dasselbe Projekt wie bei LB 1.
+						</li>
+						<li>Wechseln Sie mit <code>cd</code> in das (gerade geklonte) Projektverzeichnis, z.B. mit
+							<code>cd aa-kohler</code>.
+						</li>
+						<li>Pro Aufgabe müssen Sie einen Unterordner erstellen. Lösen Sie die Aufgabe und legen Sie ihre Lösung dort ab.</li>
+							<li>Ihre Lösung besteht aus der .ham-Datei und der .ter-Datei. Sie müssen selbst eine .ter-Datei erstellen. Achten Sie darauf, dass die .ter-Datei "zurückgesetzt" ist, wenn Sie sie abgeben.</li>
+						<li>Fügen Sie alle Änderungen mit <code>git add</code> hinzu und committen Sie diese mit
+							<code>git commit -m "Meine Lösung für Aufgabe X"</code>.
+						</li>
+						<li>Am Schluss machen Sie <code>git push</code>, um Ihre Änderungen auf den Server zu
+							übertragen.</li>
+						<li>Kontrollieren Sie auf der Weboberfläche (codevogel), ob Ihre Änderungen übertragen wurden.
+						</li>
+					</ul>
+					</ul>
+				</section>
+				<section id="LB13A3" data-visibility="hidden">
+					<h2>LB 2: Aufgabe 1 (1/3)</h2>
+					<p style="font-size: 0.8em;">
+						Das ist eine objektorientierte Aufgabe.<br>
+						<br>
+						Gegeben ist ein beliebig hohes Territorium mit 5 freien Spalten.<br>
+						Links befindet sich der Bringer (Rot). Rechts befindet sich der
+						Holer (Grün).<br>
+					<ul style="font-size: 0.8em;">
+						<li>Beide Hamster laufen von oben nach unten.</li>
+						<li>Findet der Bringer Körner, nimmt er alle auf und legt sie in der Mitte ab.</li>
+						<li>Der Holer holt alle Körner in der Mitte und legt sie in seiner Spalte (ganz rechts)
+							ab.
+						</li>
+						<li>Dann laufen beide Hamster weiter.</li>
+						<li>Das Programm endet, wenn sich beide Hamster ganz unten befinden. Dann müssen alle
+							Körner
+							in
+							der rechten Spalte liegen.
+						</li>
+					</ul>
+					</p>
+				</section>
+				<section id="LB13A3_" data-visibility="hidden">
+					<h2>LB 2: Aufgabe 1 (2/3)</h2>
+					<table style="font-size: 0.7em;">
+						<tr>
+							<td>Nach dem Initialisieren der Hamster</td>
+							<td>Der Bringer bringt Körner</td>
+							<td>Der Holer holt Körner</td>
+							<td>Nach dem Durchlauf des Programms</td>
+						</tr>
+						<tr>
+							<td><img src="LB13A3vor.png" alt="" height="500px"></td>
+							<td><img src="LB13A3bring.png" alt="" height="500px"></td>
+							<td><img src="LB13A3hol.png" alt="" height="500px"></td>
+							<td><img src="LB13A3nach.png" alt="" height="500px"></td>
+						</tr>
+					</table>
+				</section>
+				<section id="LB13A3__" data-visibility="hidden">
+					<h2>LB 2: Aufgabe 1 (3/3)</h2>
+					<h3>Tipps</h3>
+					<p>
+					<ul>
+						<li>Überlegen Sie sich, welche Fähigkeiten jeder der beiden Hamster haben soll.
+							Erstellen
+							Sie
+							dann für jeden der beiden Hamster je eine Klasse, in welcher die Fähigkeiten als
+							procedures
+							implementiert sind.</li>
+						<li>Instanzieren und initialisieren Sie dann die beiden Hamster.</li>
+						<li>Überlegen Sie sich, was die Bedingung(en) für den Endzustand sind. Erstellen Sie
+							einen
+							while-loop, welcher verlassen wird, sobald die Bedingung erfüllt ist.</li>
+						<li>Innerhalb des while-loops lassen Sie die beiden Hamster ihre Arbeit tun (mit Hilfe
+							ihrer
+							Fähigkeiten/procedures).</li>
+					</ul>
+					</p>
+				</section>
+				<section id="LB12A3" data-visibility="hidden">
+						<h2>LB 2.2: Aufgabe 1 (1/3)</h2>
+						<p style="font-size: 0.8em;">
+							Das ist eine objektorientierte Aufgabe.<br>
+							<br>
+							Gegeben ist ein zweiteiliges Territorium. Beide Teile des Territoriums sind beliebig
+							lang
+							(aber
+							immer gleich lang).<br>
+							Links befindet sich der Sucher (Grün). Unten befindet sich der
+							Markierer (Rot).<br>
+						<ul style="font-size: 0.8em;">
+							<li>Die Aufgabe des Suchers ist es, alle Gruben zu entdecken.</li>
+							<li>Die Aufgabe des Markierers ist es, jede Grube auf seinem Teil des Territoriums mit
+								einem
+								Korn zu markieren.</li>
+							<li>Die Gruben können beliebig verteilt sein.</li>
+							<li>Der Markierer hat bei Programmstart genügend Körner im Maul.</li>
+							<li>Wo sich die Hamster bei Programmende befinden, ist egal, sie sollen aber stehen
+								bleiben.
+							</li>
+						</ul>
+						</p>
+					</section>
+					<section id="LB12A3_" data-visibility="hidden">
+						<h2>LB 2.2: Aufgabe 1 (2/3)</h2>
+						<h4>Vor dem Start des Programms</h4>
+						<img src="LB12A3vor.png" alt="">
+						<h4>Nach dem Durchlauf des Programms</h4>
+						<img src="LB12A3nach.png" alt="">
+					</section>
+					<section id="LB12A3__" data-visibility="hidden">
+						<h2>LB 2.2: Aufgabe 1 (3/3)</h2>
+						<h3>Tipps</h3>
+						<p>
+						<ul>
+							<li>Überlegen Sie sich, welche Fähigkeiten jeder der beiden Hamster haben soll.
+								Erstellen
+								Sie
+								dann für jeden der beiden Hamster je eine Klasse, in welcher die Fähigkeiten als
+								procedures
+								implementiert sind.</li>
+							<li>Instanzieren und initialisieren Sie dann die beiden Hamster.</li>
+							<li>Überlegen Sie sich, was die Bedingung(en) für den Endzustand sind. Erstellen Sie
+								einen
+								while-loop, welcher verlassen wird, sobald die Bedingung erfüllt ist.</li>
+							<li>Innerhalb des while-loops lassen Sie die beiden Hamster ihre Arbeit tun (mit Hilfe
+								ihrer
+								Fähigkeiten/procedures).</li>
+						</ul>
+						</p>
+					</section>
+				<section id="LB1A3-1" data-visibility="hidden">
+						<h2>LB 2.2: Aufgabe 2 (1/2)</h2>
+						<p style="font-size: 0.8em;">
+							Das ist eine objektorientierte Aufgabe.<br>
+							<br>
+							Gegeben ist ein zweiteiliges Territorium. Jede Seite besteht aus einem beliebig langen,
+							aber
+							nur
+							ein Feld breiten Streifen. Links befindet sich der Sammler (Grün). Rechts befindet sich
+							der
+							Zeichner (Rot).<br>
+						<ul style="font-size: 0.8em;">
+							<li>Die Aufgabe des Sammlers ist es, die Körner in der linken Hälfte des Territoriums
+								aufzunehmen.</li>
+							<li>Die Aufgabe des Zeichners ist es, die Körner in der rechten Hälfte des Territoriums
+								hinzulegen.</li>
+							<li>Der Zeichner soll die Körner genau da hinlegen, wo sie der Sammler gefunden hat.
+							</li>
+							<li>Bei Programmende sind in der linken Hälfte des Territoriums keine Körner mehr zu
+								sehen,
+								dafür aber in der rechten.</li>
+							<li>Die Grösse des Territoriums ist gegeben, die Körner sollen aber beliebig verteilt
+								sein
+								können.</li>
+							<li>Der Zeichner hat bei Programmstart genügend Körner im Maul.</li>
+							<li>Wo sich die Hamster bei Programmende befinden, ist egal, sie sollen aber stehen
+								bleiben.
+							</li>
+						</ul>
+						</p>
+					</section>
+					<section id="LB1A3-2" data-visibility="hidden">
+						<h2>LB 2.2: Aufgabe 2 (2/2)</h2>
+						<table style="font-size: 0.8em;">
+							<tr>
+								<td style="width: 33%;">Vor dem Start</td>
+								<td style="width: 33%;">Nach dem Start</td>
+								<td>Nach dem Durchlauf des Programms</td>
+							</tr>
+							<tr>
+								<td style="height: 400px;"><img src="LB1A3vor.png" alt=""></td>
+								<td style="height: 400px;"><img src="LB1A3w.png" alt=""></td>
+								<td style="height: 400px;"><img src="LB1A3nach.png" alt=""></td>
+							</tr>
+						</table>
+					</section>
+			</section>
+			<!-- Aufgabensammlung -->
+			<section>
+				<section class="toc" id="aufgabensammlung">
+					<h1>Aufgabensammlung</h1>
+				</section>
+				<section id="UebungsAufgabeRaum4Ecken">
+					<h2>Übung: ...mein Raum der hat vier Ecken...</h2>
+					<p>Ein neuer Hamster wird mit vier Körnern im Maul irgendwo in einem rechteckigen, geschlossenen
+						Raum unbekannter Grösse ohne innere Mauern erzeugt. Auf keiner der Kacheln liegt ein Korn.
+						Der
+						Hamster soll in allen vier Ecken des Raumes ein Korn ablegen.</p>
+				</section>
+				<section id="UebungsAufgabeWalkTheWall">
+					<h2>Übung: Walk the Wall</h2>
+					<p>Der Standard-Hamster befindet sich in einem geschlossenen, körnerlosen Raum unbekannter
+						Grösse.
+						Rechts von ihm befindet sich eine Wand (Beispiel: siehe Abbildung). Er bekommt die Aufgabe,
+						so
+						lange
+						an der Wand entlang zu laufen, bis er irgendwann wieder seine Ausgangskachel erreicht hat.
+						Der
+						Hamster darf beim Start ein Korn im Maul haben.</p>
+					<img src="UebungWalkTheWall.png" alt="">
+				</section>
+				<section id="AufgabeObjektorientiertTreppenHamster">
+					<h2>Aufgabe: Die Treppen-Hamster</h2>
+					<img src="KoernerLeiter.png" alt="" height="300px" width="50%" style="float: left;">
+					<ul style="float: right; width: 40%; font-size: 0.8em;">
+						<li>Ziel: Alle Körner sollen in der oberen rechten Ecke abgelegt werden.</li>
+						<li>Rahmenbedingungen:
+							<ul>
+								<li>Der rote Hamster kann keine Treppen laufen.</li>
+								<li>Alle Hamster können nur ein Korn gleichzeitig transportieren.</li>
+								<li>Die grünen Hamster können maximal drei Stufen erklimmen.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section id="AufgabeObjektorientiertTreppenHamster2">
+					<h2>Aufgabe: Die Treppen-Hamster</h2>
+					<h3>Schwierigkeitsgrade</h3>
+					<p>Lösen Sie die Aufgabe mit folgenden Schritten. Wie weit kommen Sie?</p>
+					<p>Sobald Sie mit diesen Schritten nicht mehr weiterkommen: Versuchen Sie, die Aufgabe auf
+						andere
+						(ihre) Weise zu lösen.</p>
+					<ol style="font-size: 0.7em;">
+						<li>Erstellen Sie eine Klasse für den roten Hamster, so dass die Fähigkeiten, die er
+							benötigt,
+							mit Methoden abgebildet sind.</li>
+						<li>Erstellen Sie eine Klasse für die grünen Hamster, so dass die Fähigkeiten, die sie
+							benötigen, mit Methoden abgebildet sind.</li>
+						<li>Definieren/beschreiben Sie (in Worten) exakt die Aufgabe des roten Hamsters.</li>
+						<li>Erzeugen und initialisieren Sie den roten Hamster. Programmieren Sie im main() seine
+							Aufgabe
+							in Form von Schritten mit Hilfe seiner Methoden.</li>
+						<li>Definieren/beschreiben Sie (in Worten) exakt die Aufgaben der grünen Hamsters.</li>
+						<li>Erzeugen und initialisieren Sie die grünen Hamster. Programmieren Sie im main() ihre
+							Aufgabe
+							in Form von Schritten mit Hilfe ihrer Methoden.</li>
+					</ol>
+				</section>
+				<section id="UebungsAufgabeWalkTheLine">
+					<h2>Übung: Walk the Line</h2>
+					<p>Die Aufgabenstellung von <a href="#UebungsAufgabeWalkTheWall">Walk the wall</a> wird
+						erweitert.
+						Zusätzlich existiert nun ein zweiter Hamster, welcher an der linken Wand steht und nach
+						Osten
+						schaut. Er läuft immer horizontal nach rechts bis zur Wand und wieder zurück.<br>
+						Der Standard-Hamster bewegt sich wie in Aufgabe <a href="#UebungsAufgabeWalkTheWall">Walk the
+							wall</a> beschrieben.<br>
+						Die beiden Hamster sollen sich so lange bewegen, bis sie (per Zufall), auf demselben Feld
+						stehen. Dann soll das Programm stoppen. Nach insgesamt 400 Schritten soll das Programm in
+						jedem
+						Fall stoppen.</p>
+				</section>
+				<section id="UebungsAufgabeSlalom">
+					<h2>Übung: Slalom</h2>
+					<p>Der Hamster ist zum Skifahrer mutiert. Vor ihm befindet sich ein Slalomparcours mit einem
+						Korn am
+						Ende, das das Ziel markiert. Der
+						Hamster soll den Slalomparcours bewältigen und das Korn fressen. Er soll den Parcour auch
+						dann
+						meistern, wenn Wände horizontal verschoben werden.</p>
+					<img src="Slalom.png" alt="">
+				</section>
+				<section id="UebungsAufgabeSlalom2">
+					<h2>Übung: Parallel-Slalom</h2>
+					<p>Der Hamster ist immer noch im Skiurlaub. Er hat inzwischen eine nette Bekanntschaft
+						gemacht und möchte dieser zeigen, wie gut er Ski fahren kann. Die
+						beiden haben vereinbart, einen Parallelslalom auszutragen. Beim Parallelslalom führen die
+						beiden
+						Hamster die jeweiligen Hamster-Befehle immer abwechselnd aus.</p>
+					<img src="Slalom2.png" alt="">
+				</section>
+				<section id="UebungsAufgabeSlalomKorn">
+					<h2>Übung: Slalom mit Korn</h2>
+					<p>Bei diesem Slalom liegen vor dem Tor (Hindernis) Körner. Liegt genau ein Korn, soll er das
+						Tor
+						links umgehen. Liegen vor dem Tor zwei Körner, soll er das Tor rechts umgehen.<br>
+						Der Hamster weiss nicht, wie viele Hindernisse es gibt. Das Programm endet, sobald der
+						Hamster
+						auf dem Feld mit drei Körnern angekommen ist.
+					</p>
+					<img src="SlalomKorn.png" alt="">
+				</section>
+				<section id="UebungsAufgabeAbbildHamster">
+					<h2>Übung: Abbild-Hamster</h2>
+					<p>Der Hamster soll auf der zweiten Zeile das Körnerbild der ersten darlegen (kopieren). Die
+						Körner
+						auf der ersten Zeile sollen liegen bleiben. Hat der Hamster die zweite Zeile betreten, darf
+						er
+						nicht mehr zurück.
+						Die Länge (Anzahl Spalten) ist 12.
+					</p>
+					<img src="AbbildHamster.png" alt="">
+				</section>
+				<section id="UebungsAufgabeAbbildHamster2">
+					<h2>Übung: Abbild-Hamster (schwierigere Variante)</h2>
+					<p>Der Hamster soll auf der zweiten Zeile das Körnerbild der ersten darlegen (kopieren). Die
+						Körner
+						auf der ersten Zeile sollen liegen bleiben. Hat der Hamster die zweite Zeile betreten, darf
+						er
+						nicht mehr zurück.
+						Der Hamster kennt die Länge (Anzahl Spalten) nicht (die Anzahl Spalten kann sich verändern).
+					</p>
+					<img src="AbbildHamster.png" alt="">
+				</section>
+				<section id="UebungsAufgabeAddition">
+					<h2>Übung: Additions-Hamster</h2>
+					<p>Die Anzahl Körner auf einem Feld repräsentieren eine Dezimalziffer. Pro Zeile steht also eine
+						Dezimalzahl.<br>
+						Der Hamster soll die Addition durchführen und das Ergebnis mit Körnern hinlegen.
+					</p>
+					<img src="Addition.png" alt="">
+				</section>
+				<section id="UebungsAufgabeVermesser">
+					<h2>Übung: Der Vermesser</h2>
+					<p>Der Hamster befindet sich wie abgebildet auf dem Territorium. Die Aufgabe des Hamsters
+						besteht
+						darin, die inneren Mauern der linken Hälfte auf der rechten Hälfte nachzubilden. Bei
+						Programmstart hat der Hamster genügend Körner im Maul.
+					</p>
+					<table>
+						<tr>
+							<td>
+								<p>Vor Programmstart sieht das Territorium so aus:</p>
+							</td>
+							<td>
+								<p>Bei Programmende sieht das Territorium so aus:</p>
+							</td>
+						</tr>
+						<tr>
+							<td><img src="VermesserVor.png" alt=""></td>
+							<td><img src="VermesserNach.png" alt=""></td>
+						</tr>
+					</table>
+				</section>
+				<section id="UebungsAufgabeVermesserGespiegelt">
+					<h2>Übung: Der Vermesser - Zusatzaufgabe</h2>
+					<p>Der Hamster soll das Territorium nicht nur nachbilden, sondern die inneren Mauern spiegeln.
+					</p>
+					<p>Bei Programmende sieht das Territorium dann so aus:</p>
+					<img src="VermesserGespiegelt.png" alt="" height="300px">
+				</section>
+			</section>
+			<!-- Material -->
+			<section data-visibility="hidden">
+				<section>
+					<h1>WIP - noch nicht veröffentlichte Unterlagen</h1>
+				</section>
+				<!-- Block 4 -->
+				<section>
+					<section>
+						<h1>Block 4: Der Hamster als Objekt</h1>
+					</section>
+					<section id="zieleB4">
+						<h2>Block 4: Lernziele</h2>
+						<ul>
+
+						</ul>
+					</section>
+					<section id="ablaufB4">
+						<h2>Block 4: Ablauf</h2>
+						<ul>
+							<li>Präsentationen: Repetition der bisherigen Konzepte (ohne objektorientert)</li>
+							<li>Intro in objektorienterte Programmierung mit dem Hamster-Simulator</li>
+							<li>Übungen zu objektorienterter Programmierung mit dem Hamster-Simulator</li>
+						</ul>
+					</section>
+					<section id="AuswertungbisUndOhneObjektorientiert">
+						<h2>Auswertung (Plenum)</h2>
+						<p>Bereiten Sie die Antworten auf folgende Fragen vor (alle Antworten finden Sie im Script):
+						</p>
+						<ol>
+							<li>Was ist die grösste Zahl, die als <em>int</em> gespeichert werden kann? Was ist die
+								kleinste
+								Zahl?</li>
+							<li>Was bedeutet der Operator % (Modulo)?</li>
+							<li>In welchem Bereich ist die Variable <em>stufenAnzahl</em> gültig?</li>
+						</ol>
+						<pre><code style="font-size: 1.3em;">
+						void main() {
+							int stufenAnzahl = zaehleStufen();
+						
+							while ((stufenAnzahl > 0) && kornDa()) {
+								int schritt = 2;
+								nimm();
+								stufenAnzahl - schritt;
+							}
+						
+							erklimmeBerg();
+						}
+					</code></pre>
+					</section>
+				</section>
+				<!-- Block 5 -->
+				<section>
+					<section>
+						<h1>Block 5: Abschluss "Hamster" & IntelliJ</h1>
+					</section>
+					<section id="zieleB5">
+						<h2>Block 5: Lernziele</h2>
+						<ul>
+
+							<li>Ich kann ein Hello World Java Programm in IntelliJ entwickeln, kompilieren und
+								ausführen.
+							</li>
+						</ul>
+						<p>Repetition und Festigen der bisherigen Lernziele zu imperativen und objektorienterten
+							Programmierkonstrukten.</p>
+					</section>
+					<section id="ablaufB5">
+						<h2>Block 5: Ablauf</h2>
+						<p>siehe <a href="#tasksB5">Checkliste</a></p>
+					</section>
+				</section>
+				<!-- Block 6 -->
+				<section>
+					<section>
+						<h1>Block 6: Programmierübungen</h1>
+					</section>
+					<section id="zieleB6">
+						<h2>Block 6: Lernziele</h2>
+						<ul>
+							<li>[Lernziele der Blöcke 3 + 4 / Festigung]</li>
+						</ul>
+					</section>
+					<section id="ablaufB6">
+						<h2>Block 6: Ablauf</h2>
+						<p>siehe <a href="#tasksB6">Checkliste</a></p>
+					</section>
+
+
+				</section>
+				<!-- Block 7 -->
+				<section>
+					<section>
+						<h1>Block 7: LB1 & Java & Git</h1>
+					</section>
+					<section id="zieleB7">
+						<h2>Block 7: Lernziele</h2>
+						<ul>
+							<li>Ich kann ein Java-Programm in IntelliJ erstellen, kompilieren und ausführen.</li>
+							<li>Ich kann ein Git-Repository klonen, Änderungen hinzufügen, commiten und die
+								Änderungen
+								in
+								das Remote-Repository pushen.</li>
+						</ul>
+					</section>
+					<section id="ablaufB7">
+						<h2>Block 7: Ablauf</h2>
+						<ul>
+							<li>LB 1 (70' plus Pause)</li>
+							<li>Java in IntelliJ</li>
+							<li>Intro in Git, Git-Bash installieren und Basic Flow einsetzen</li>
+						</ul>
+					</section>
+				</section>
+				<!-- Block 8 -->
+				<section>
+					<section>
+						<h1>Block 8: Datentypen und Variablen in Java</h1>
+					</section>
+					<section id="zieleB8">
+						<h2>Block 8: Lernziele</h2>
+						<ul>
+							<li>Ich kann die primitiven Datentypen in Java einsetzen, um verschiedene Arten von
+								Daten zu
+								speichern.</li>
+						</ul>
+					</section>
+					<section id="ablaufB8">
+						<h2>Block 8: Ablauf</h2>
+						<ul>
+							<li>Variablen und Datentypen in Java (alle)</li>
+							<li>Taschenrechner in Java programmieren</li>
+							<li>Alternativprogramm 1: Üben mit dem Hamster-Simulator</li>
+							<li>Alternativprogramm 2: <a
+									href="https://www.w3resource.com/java-exercises/basic/index.php">Java-Übungen</a>
+							</li>
+						</ul>
+					</section>
+					<section id="javaDataTypesAuswertung">
+						<h2>Primitive Datentypen in Java - Auswertung</h2>
+						<table style="font-size: 0.7em;">
+							<thead>
+								<tr>
+									<th style="width: 30%;">Kategorie</th>
+									<th>Datentyp</th>
+									<th>Grösse [Bit]</th>
+									<th>Initialisierungs-wert</th>
+									<th style="width: 40%;">Wertebereich <br> (MIN MAX)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Wahrheitswert</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>
+										<em>true</em>, <em>false</em>
+									</td>
+								</tr>
+								<tr>
+									<td>Bytezahl</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>-128 … +127</td>
+								</tr>
+								<tr>
+									<td>Kleine Ganzzahl</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>-32'768 … +32'767</td>
+								</tr>
+								<tr>
+									<td>Mittlere Ganzzahl</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>-2'147'483'648 … +2'147'483'647</td>
+								</tr>
+								<tr>
+									<td>Grosse Ganzzahl</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>-2^63 … +(2^63)-1 <br> = <br> -9.2233…e18 … +9.2233…e18</td>
+								</tr>
+								<tr>
+									<td>Reelle Zahl mit 7 Stellen Genauigkeit</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>±1.4…×10^-38 … ±3.4…×10^+38</td>
+								</tr>
+								<tr>
+									<td>Reelle Zahl mit 14 Stellen Genauigkeit <br> (doppelte Genauigkeit)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>±4.9…×10^-324 … ±1.8…×10^+308</td>
+								</tr>
+								<tr>
+									<td>Ein Buchstabe aus dem UTF-16 Charset <br> (mit ' begrenzt!)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>'\u0000' … '\uFFFF' <br> Beispiele: 'a' '€'</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+
+				</section>
+				<!-- Block 9 -->
+				<section>
+					<section>
+						<h1>Block 9: Abläufe mit Struktogrammen darstellen / LB2</h1>
+					</section>
+					<section id="zieleB9">
+						<h2>Block 9: Lernziele</h2>
+						<ul>
+
+						</ul>
+					</section>
+					<section id="ablaufB9">
+						<h2>Block 9: Ablauf</h2>
+						<table style="font-size: 0.7em;">
+							<tr style="font-weight: bold;">
+								<td>Zeit (t+x')</td>
+								<td>Tasks <em>Prüflinge</em></td>
+								<td>Tasks <em>Übende</em></td>
+								<td>Bemerkungen</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td colspan="2" style="text-align: center;">Ablauf und Info</td>
+								<td>Prüfung/Benotung, Platzwahl</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td colspan="2" style="text-align: center;">WarmUp "EVA-Prinzip"</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>25</td>
+								<td>Pause</td>
+								<td>Intro Aufgaben</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>35</td>
+								<td>Prüfung</td>
+								<td>Aufgaben lösen</td>
+								<td>Plätze nach Gruppe getrennt einnehmen, Prüflinge vorne</td>
+							</tr>
+							<tr>
+								<td>115</td>
+								<td colspan="2" style="text-align: center;">Pause</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>125</td>
+								<td colspan="2" style="text-align: center;">Auswertung "Taschenrechner"</td>
+								<td>für alle, auch Prüflinge</td>
+							</tr>
+							<tr>
+								<td>135</td>
+								<td colspan="2" style="text-align: center;">Einlesen in "Variablen und Datentypen"
+								</td>
+								<td><a href="script.html#variablesinjava">Script Kapitel "Variablen und
+										Datentypen"</a>
+								</td>
+							</tr>
+							<tr>
+								<td>150</td>
+								<td colspan="2" style="text-align: center;">Auswertung "Datentypen"</td>
+								<td><a href="#javaDataTypesAuswertung">Aufgabe</a></td>
+							</tr>
+							<tr>
+								<td>160</td>
+								<td colspan="2" style="text-align: center;">Abläufe darstellen</td>
+								<td>Intro in neues Thema "Abläufe mit einem Struktogramm darstellen"</td>
+							</tr>
+							<tr>
+								<td>175</td>
+								<td colspan="2" style="text-align: center;">Übungen zu Struktogramm</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>200</td>
+								<td colspan="2" style="text-align: center;">Ende</td>
+								<td></td>
+							</tr>
+						</table>
+					</section>
+					<section id="LB12Intro" data-visibility="hidden">
+						<h2>LB 1.2: Informationen</h2>
+						<ul style="font-size: 0.9em;">
+							<li>Closed book (Ausnahme: Ein A4-Blatt mit eigenen Notizen, bisherige Aufgaben): Auf
+								ihrem
+								Laptop darf nur Teams->Assignments und der Hamster-Simulator geöffnet sein.</li>
+							<li>Die Resultate müssen als .ham-Files im Assignment abgegeben werden.</li>
+							<li>Es ist bei jeder Aufgabe vorgegeben, ob sie mit imperativer oder objektorienterter
+								Programmierung gelöst werden muss.</li>
+							<li>In welcher Reihenfolge Sie die Aufgaben lösen und abgeben, ist egal.</li>
+							<li>Ihre Lösungen müssen <em>dynamisch</em> sein. Nutzen Sie dafür Kontrollstrukturen.
+							</li>
+							<li>Ihr Code muss aufgeräumt und formatiert sein, insbesondere die Einrückung
+								(indentation)
+								muss
+								korrekt sein.</li>
+							<li>Bei objektorienterten Aufgaben muss mindestens eine Klasse erstellt und genutzt
+								werden.
+							</li>
+							<li>Die Prüfung dauert 80'.</li>
+							<li style="font-weight: bold;">Tipp: Wechseln Sie spätestens nach der Hälfte der Zeit zu
+								ihrer
+								zweiten Aufgabe, auch wenn die erste nicht fertig gelöst ist.</li>
+						</ul>
+					</section>
+					<section id="LB12A3" data-visibility="hidden">
+						<h2>LB 1.2: Aufgabe 3 (1/3)</h2>
+						<p style="font-size: 0.8em;">
+							Das ist eine objektorientierte Aufgabe.<br>
+							<br>
+							Gegeben ist ein zweiteiliges Territorium. Beide Teile des Territoriums sind beliebig
+							lang
+							(aber
+							immer gleich lang).<br>
+							Links befindet sich der Sucher (Grün). Unten befindet sich der
+							Markierer (Rot).<br>
+						<ul style="font-size: 0.8em;">
+							<li>Die Aufgabe des Suchers ist es, alle Gruben zu entdecken.</li>
+							<li>Die Aufgabe des Markierers ist es, jede Grube auf seinem Teil des Territoriums mit
+								einem
+								Korn zu markieren.</li>
+							<li>Die Gruben können beliebig verteilt sein.</li>
+							<li>Der Markierer hat bei Programmstart genügend Körner im Maul.</li>
+							<li>Wo sich die Hamster bei Programmende befinden, ist egal, sie sollen aber stehen
+								bleiben.
+							</li>
+						</ul>
+						</p>
+					</section>
+					<section id="LB12A3_" data-visibility="hidden">
+						<h2>LB 1.2: Aufgabe 3 (2/3)</h2>
+						<h4>Vor dem Start des Programms</h4>
+						<img src="LB12A3vor.png" alt="">
+						<h4>Nach dem Durchlauf des Programms</h4>
+						<img src="LB12A3nach.png" alt="">
+					</section>
+					<section id="LB12A3__" data-visibility="hidden">
+						<h2>LB 1.2: Aufgabe 3 (3/3)</h2>
+						<h3>Tipps</h3>
+						<p>
+						<ul>
+							<li>Überlegen Sie sich, welche Fähigkeiten jeder der beiden Hamster haben soll.
+								Erstellen
+								Sie
+								dann für jeden der beiden Hamster je eine Klasse, in welcher die Fähigkeiten als
+								procedures
+								implementiert sind.</li>
+							<li>Instanzieren und initialisieren Sie dann die beiden Hamster.</li>
+							<li>Überlegen Sie sich, was die Bedingung(en) für den Endzustand sind. Erstellen Sie
+								einen
+								while-loop, welcher verlassen wird, sobald die Bedingung erfüllt ist.</li>
+							<li>Innerhalb des while-loops lassen Sie die beiden Hamster ihre Arbeit tun (mit Hilfe
+								ihrer
+								Fähigkeiten/procedures).</li>
+						</ul>
+						</p>
+					</section>
+				</section>
+				<!-- Block 10 -->
+				<section>
+					<section>
+						<h1>Block 10: Struktogramme / Projekt</h1>
+					</section>
+					<section id="zieleB10">
+						<h2>Block 10: Lernziele</h2>
+						<ul>
+							<li>Ich kann den Ablauf eines Programmes mit einem Struktogramm darstellen, indem ich
+								die
+								Elemente <em>lineare Struktur</em>, <em>Schleifen</em> und <em>Verzweigung</em>
+								verwende.
+							</li>
+							<li>Ich kann selbständig ein Java-Projekt in IntelliJ erstellen.</li>
+							<li>Ich kann selbständig Java-Code mit Git-Bash in ein bestehendes Git-Repo pushen.</li>
+						</ul>
+					</section>
+					<section id="ablaufB10">
+						<h2>Block 10: Ablauf</h2>
+						<ul>
+							<li>Struktogramme: Aufgabe und Auswertung</li>
+							<li>Besprechung der Noten</li>
+							<li>Hamster: Selbständige Arbeit</li>
+							<li>Projekt</li>
+						</ul>
+					</section>
+					<section id="selbstaendigeArbeitHamster">
+						<h2>Hamster: Selbständige Arbeit</h2>
+						<ul>
+							<li>Folgende <a href="exercises.html">Übungen</a> führen Sie schrittweise durch die
+								Inhalte,
+								die
+								wir in den letzten acht Wochen besprochen haben.</li>
+							<li>Die Aufgaben haben Musterlösungen und können selbständig ausgewertet werden.</li>
+							<li>Sie stehen allen Lernenden zur Verfügung, sind aber obligatorisch für diejenigen
+								Lernenden,
+								die in der zweiten Prüfung eine ungenügende Note hatten.</li>
+							<li>Über das <a href="https://forms.microsoft.com/e/pcFWv5XkxE">Teams-Formular</a>
+								teilen
+								Sie
+								mir mit, welche Aufgaben Sie erledigt haben.</li>
+						</ul>
+						<p></p>
+						<p></p>
+					</section>
+					<section id="projektAuftrag">
+						<h2>Projektauftrag</h2>
+						<table style="font-size: 0.7em;">
+							<tr>
+								<td>Thema</td>
+								<td>Selbstwahl (<a href="#projektThemenBeispiele">Beispiele</a>); muss von LP
+									reviewed
+									werden</td>
+							</tr>
+							<tr>
+								<td>Umfang</td>
+								<td>Sie sollen mit ihrem Programm zeigen können, dass Sie die im Unterricht
+									erlernten
+									Techniken beherrschen (gemäss <a
+										href="BewertungsrasterKompetenzenProjekt.png">Bewertungsraster</a>). Die
+									Aufgabe
+									muss daher so gestaltet sein, dass Sie in der Lösung diese Kompetenzen zeigen
+									können.
+								</td>
+							</tr>
+							<tr>
+								<td>Rahmenbedingungen</td>
+								<td>Java-Projekt in IntelliJ, Code in git, Gruppenarbeit, benotet (50%).<br>
+									Jedes Teammitglied muss einen substantiellen Beitrag zum Gelingen des Projekts
+									leisten.
+								</td>
+							</tr>
+							<tr>
+								<td>Ablauf/Termine</td>
+								<td>
+									<ul>
+										<li>22.10.2024: Definition des Themas und der Techniken, Abgabe als README
+											in
+											Git
+										</li>
+										<li>5.11.2024: Umsetzung/Test, Code in Git</li>
+										<li>12.11.2024: Abgabe</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Lieferinhalte</td>
+								<td>Code in Git, Beschreibung als README</td>
+							</tr>
+							<tr>
+								<td>Bewertung</td>
+								<td>Ihre Arbeit wird nach <a href="BewertungsrasterKompetenzenProjekt.png">diesem
+										Raster</a>
+									bewertet. Achten Sie darauf, dass neben den o.g.
+									Themen auch übergreifende Kompetenzen bewertet werden.</td>
+							</tr>
+							<tr>
+								<td>Gruppeneinteilung</td>
+								<td>4-er Gruppen (eine 5-er Gruppe)</td>
+							</tr>
+						</table>
+					</section>
+					<section id="projektThemenBeispiele">
+						<h2>Projektthemen: Beispiele</h2>
+						<p>Richten Sie sich nach dem Beispiel des <em>Taschenrechners</em>. Sie können damit alle
+							geforderten Techniken zeigen. Sie können ihre Aufgabe selbst erweitern und so weitere
+							Punkte
+							sammeln.</p>
+						<table>
+							<tr style="font-weight: bold;">
+								<td>Beispiel</td>
+								<td>Umfang</td>
+							</tr>
+							<tr>
+								<td>Programm, das die Fibonacci-Zahlen bis zu einem bestimmten Wert ausgibt.</td>
+								<td>sehr tief</td>
+							</tr>
+							<tr>
+								<td>Programm, das alle Primzahlen bis zu einem bestimmten Wert ausgibt (nur für
+									kleine
+									Primzahlen).</td>
+								<td>tief</td>
+							</tr>
+							<tr>
+								<td>Wörterbuch, das für ein eingegebenes Wort eine Übersetzung (z.B. in eine andere
+									Sprache)
+									ausgibt.</td>
+								<td>mittel</td>
+							</tr>
+							<tr>
+								<td>"Pong" - Arcade game</td>
+								<td>hoch</td>
+							</tr>
+						</table>
+					</section>
+					<section id="startproject">
+						<h2>Los geht's</h2>
+						<ol>
+							<li>Gruppeneinteilung</li>
+							<li>Git-Projekt pro Gruppe -> Siehe Readme</li>
+						</ol>
+					</section>
+				</section>
+				<!-- Block 11 -->
+				<section>
+					<section>
+						<h1>Block 11: Projekt: Umsetzung</h1>
+					</section>
+					<section id="zieleB11">
+						<h2>Block 11: Lernziele</h2>
+						<ul>
+							<li>Ich kann ein Java-Projekt in IntelliJ erstellen, kompilieren und starten.</li>
+							<li>Ich kann einfache Funktionen wie das Einlesen von User-Input, Ausgeben von
+								Informationen
+								auf
+								der Konsole, Berechnen von mathematischen Aufgaben in Java programmieren.</li>
+							<li>Ich kann für mein Projekt das Code-Grundgerüst erstellen, so dass der Code
+								kompiliert
+								und
+								für alle benötigten Schritte Dummy-Aktionen ausgeführt werden.</li>
+						</ul>
+					</section>
+					<section id="ablaufB11">
+						<h2>Block 11: Ablauf</h2>
+						<ul>
+							<li>Demo 1: git mit git-bash</li>
+							<li>Dem0 2: Java-Projekt in IntelliJ starten und ausführen</li>
+							<li>[Projektarbeit]</li>
+						</ul>
+					</section>
+					<section id="gitOverviewRep">
+						<h2>Git-Flow</h2>
+						<table>
+							<tr>
+								<td><img src="gitflowwithcommands.png" alt="" style="height: 500px; width: 500px;">
+								</td>
+								<td style="width: 40%; vertical-align: middle;">
+									<ul style="font-size: 0.7em;">
+										<li>Remote Repo auf ihren Laptop clonen:
+											<code>git clone <em>repo-url</em></code>
+										</li>
+										<li>Im Code arbeiten, neue Files erstellen und Files ändern.</li>
+										<li>Alle änderungen vom Remote Repo holen: <code>git pull</code></li>
+										<ul>Falls das nicht geht:
+											<li><code>git fetch</code></li>
+											<li><code>git merge</code></li>
+										</ul>
+										<li>Neue Files dem Repo hinzufügen: <code>git add .</code></li>
+										<li>Einen neuen commit erstellen:
+											<code>git commit -m "function for adding values"</code>
+										</li>
+										<li>Die Änderungen in's remote Repo pushen: <code>git push</code></li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section id="LB13Intro" data-visibility="hidden">
+						<h2>LB 1.3: Informationen</h2>
+						<ul style="font-size: 0.9em;">
+							<li>Closed book (Ausnahme: Ein A4-Blatt mit eigenen Notizen, bisherige Aufgaben): Auf
+								ihrem
+								Laptop darf nur Teams->Assignments und der Hamster-Simulator geöffnet sein.</li>
+							<li>Die Resultate müssen und dürfen <b>nur als .ham-Files</b> im Assignment abgegeben
+								werden.
+							</li>
+							<li>Sie dürfen nur eine Lösung, d.h. ein .ham-File, pro Aufgabe abgeben.</li>
+							<li>Es ist bei jeder Aufgabe vorgegeben, ob sie mit imperativer oder objektorienterter
+								Programmierung gelöst werden muss.</li>
+							<li>In welcher Reihenfolge Sie die Aufgaben lösen und abgeben, ist egal.</li>
+							<li>Ihre Lösungen müssen <em>dynamisch</em> sein. Nutzen Sie dafür Kontrollstrukturen.
+							</li>
+							<li>Ihr Code muss aufgeräumt und formatiert sein, insbesondere die Einrückung
+								(indentation)
+								muss
+								korrekt sein.</li>
+							<li>Bei objektorienterten Aufgaben muss mindestens eine Klasse erstellt und genutzt
+								werden.
+							</li>
+							<li>Die Prüfung dauert 80'.</li>
+							<li style="font-weight: bold;">Tipp: Wechseln Sie spätestens nach der Hälfte der Zeit zu
+								ihrer
+								zweiten Aufgabe, auch wenn die erste nicht fertig gelöst ist.</li>
+						</ul>
+					</section>
+					<section id="LB13A1" data-visibility="hidden">
+						<h2>LB 1.3: Aufgabe 1 (1/2)</h2>
+						<ul style="font-size: 0.7em;">
+							<li>Das ist eine imperative Aufgabe.</li>
+							<li>Der Hamster befindet sich in einem quadratischen Territorium unbekannter Grösse oben
+								links.
+							</li>
+							<li>Die Höhe und die Breite des Territoriums ist eine ungerade Zahl. Es gibt also eine
+								klar
+								definierte Mitte.</li>
+							<li>Der Hamster soll sich spiralförmig aus der Mitte heraus bewegen: Ein Schritt
+								vorwärts,
+								Drehung nach links, zwei Schritte vorwärts, Drehung nach links, drei Schritte
+								vorwärts,... .
+								So lange, bis er eine Wand berührt.</li>
+							<li>Der Hamster soll seine Schritte bis zu diesem Zeitpunkt zählen.</li>
+							<li>Der Hamster soll so viele Körner in der Mitte des Territoriums ablegen, wie er
+								Schritte
+								gezählt hat.</li>
+							<li>Der Hamster startet mit genügend Körnern im Maul.</li>
+						</ul>
+						<table style="font-size: 0.8em;">
+							<tr>
+								<td>Vor dem Start des Programms</td>
+								<td>Nach dem Durchlauf des Programms</td>
+							</tr>
+							<tr>
+								<td><img src="LB13A1vor.png" alt="" height="230px"></td>
+								<td><img src="LB13A1nach.png" alt="" height="230px"></td>
+							</tr>
+						</table>
+					</section>
+					<section id="LB13A1_" data-visibility="hidden">
+						<h2>LB 1.3: Aufgabe 1 (2/2)</h2>
+						<h3>Tipps</h3>
+						<p>
+						<ul>
+							<li>Der Operator / entspricht der Division<br>(Beispiel:
+								<code>int mitte=breite/2</code>).
+							</li>
+							<li>Wenn Sie eine int teilen, bekommen Sie immer eine ganze Zahl, wobei die
+								Dezimalstellen
+								einfach abgeschnitten werden.</li>
+							<li>Strukturieren Sie ihr Programm mit Funktionen. Nutzen Sie für Funktionen die
+								Konzepte
+								Parameter und Rückgabewert.</li>
+							<li>Wiederholen Sie Befehle mit der while-Schleife.</li>
+							<li>Nutzen Sie lokale oder globale Variablen, wenn sich der Hamster etwas (z.B. eine
+								Zahl)
+								merken soll.</li>
+							<li style="font-weight: bold;">Falls Sie die Mitte nicht ermitteln können: Legen Sie die
+								Körner
+								irgendwo ab. Der Punktabzug dazu ist kleiner, als wenn Sie keine kompilierende
+								Lösung
+								abgeben.</li>
+						</ul>
+						</p>
+					</section>
+					<section id="LB13A2" data-visibility="hidden">
+						<h2>LB 1.3: Aufgabe 2 (1/2)</h2>
+						<ul style="font-size: 0.8em;">
+							<li>Das ist eine imperative Aufgabe.</li>
+							<li>Der Hamster ist ein Segelflugzeug. Er fliegt immer knapp unter den Wolken hindurch,
+								aber
+								nie
+								in einer Wolke. Wolken sind als Mauern dargestellt.</li>
+							<li>Der Hamster soll von links nach rechts fliegen und dann landen.</li>
+						</ul>
+						<table>
+							<tr>
+								<td>Vor dem Start des Programms</td>
+								<td>Nach dem Durchlauf des Programms, mit Flugroute</td>
+							</tr>
+							<tr>
+								<td><img src="LB13A2vor.png" alt=""></td>
+								<td><img src="LB13A2nach.png" alt=""></td>
+							</tr>
+						</table>
+					</section>
+					<section id="LB13A2_" data-visibility="hidden">
+						<h2>LB 1.3: Aufgabe 2 (2/2)</h2>
+						<h3>Tipps</h3>
+						<p>
+						<ul>
+							<li>Überlegen Sie sich zuerst den Ablauf für das Programm.</li>
+							<li>Dieser Ablauf besteht aus einzelnen Aktionen und Abfragen, wie zum Beispiel:
+								obenFrei,
+								sinke, steige, amBoden etc.</li>
+							<li>Erstellen Sie für diese Aktionen je eine procedure und programmieren Sie aus den
+								Einzelschritten den Ablauf.</li>
+						</ul>
+						</p>
+					</section>
+				</section>
+				<!-- Block 12 -->
+				<section>
+					<section>
+						<h1>Block 12: Projekt: Umsetzung</h1>
+					</section>
+					<section id="ablaufB12">
+						<h2>Block 12: Ablauf</h2>
+						<ul>
+							<li>Repetition: Projektauftrag und Bewertung</li>
+							<li>[Projektarbeit]</li>
+						</ul>
+					</section>
+					<section id="RepProjektauftrag">
+						<h2>Ziele für ihr Projekt</h2>
+						<img src="ziel.png" alt="">
+						<ul>
+							<li><a href="#projektAuftrag">Projektauftrag</a></li>
+							<li><a href="BewertungsrasterKompetenzenProjekt.png">Bewertung</a></li>
+							<li>README: Kurze Beschreibung des Projekts, Ziel, Team,...</li>
+							<li>In das Repo kommt <b>code</b>, kein Build (kompilierte Files, e.g. class-files).
+							</li>
+						</ul>
+					</section>
+				</section>
+				<!-- Block 13 -->
+				<section>
+					<section>
+						<h1>Block 13: Projekt: Abschluss der Umsetzung</h1>
+					</section>
+					<section id="ablaufB13">
+						<h2>Block 13: Ablauf</h2>
+						<ul>
+							<li>Intro / Repetition des Arbeitsauftrags / Info zur Präsentation</li>
+							<li>Projektarbeit</li>
+							<li>Vorbereitung der Präsentation</li>
+						</ul>
+					</section>
+					<section id="RepProjektauftragAbschluss">
+						<h2>Projektabschluss und Prep Präsentation</h2>
+						<table style="font-size: 0.8em;">
+							<tr>
+								<td>Projektabschluss</td>
+								<td>Prep Präsentation</td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>Setzen Sie sich einen Zeitpunkt für den Entwicklungsstopp.</li>
+										<li>Ab diesem Zeitpunkt machen Sie keine neuen Funktionen mehr - nur noch
+											Abschlussarbeiten (Bugfixing, ...).</li>
+										<li>Lesen Sie nochmal die <a
+												href="BewertungsrasterKompetenzenProjekt.png">Bewertung</a> - denken
+											Sie
+											daran, dass neben einen funktionierenden Tool auch andere Faktoren
+											wichtig
+											sind
+											(sauberen Code, commits,...).</li>
+										<li>Dann: Lernen, lernen, lernen: Sie müssen ihren Code verstehen. Fragen
+											Sie
+											sich
+											gegenseitig ab.</li>
+								<td>
+									<ul>
+										<li>Inhalt: <ul>
+												<li>Demo ihrer Lösung</li>
+												<li>Übersicht über ihren Code</li>
+												<li>Aufzeigen besonderer Herausforderungen oder libraries, die Sie
+													verwendet
+													haben</li>
+												<li>Fazit, Learnings</li>
+											</ul>
+										</li>
+										<li>Die Präsentation wird inhaltlich beurteilt.</li>
+										<li>Dauer: 5-7 Minuten</li>
+										<li style="font-weight: bold;">Diskussion mit Kollegen und LP</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<p style="font-size: 0.8em;">Die Präsentationen im nächsten Block bilden den Abschluss des
+							Moduls
+							319. Wir starten dann direkt in das Modul <a
+								href="https://www.modulbaukasten.ch/module/162/1/de-DE?title=Daten-analysieren-und-modellieren">162
+								- Daten analysieren und modellieren</a></p>
+					</section>
+				</section>
+				<!-- Block 14 -->
+				<section>
+					<section>
+						<h1>Block 14: Projekt: Präsentation</h1>
+					</section>
+					<section id="ablaufB14">
+						<h2>Block 14: Ablauf</h2>
+						<ul>
+							<li>Präsentationen mit Fragerunde / Diskussion</li>
+						</ul>
+					</section>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://studentsportal2026.z6.web.core.windows.net/dist/reveal.js"></script>
+	<script src="https://studentsportal2026.z6.web.core.windows.net/plugin/notes/notes.js"></script>
+	<script src="https://studentsportal2026.z6.web.core.windows.net/plugin/markdown/markdown.js"></script>
+	<script src="https://studentsportal2026.z6.web.core.windows.net/plugin/highlight/highlight.js"></script>
+	<script src="https://studentsportal2026.z6.web.core.windows.net/plugin/sko/toc.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			view: 'scroll',
+			scrollProgress: true
+		});
+		initializeToc();
+	</script>
+</body>
+
+</html>

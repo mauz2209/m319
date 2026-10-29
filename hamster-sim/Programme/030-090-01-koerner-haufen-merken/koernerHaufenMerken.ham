@@ -1,0 +1,68 @@
+/*imperative program*/void main() {
+    zaehleHaufen();
+    bringZurück();
+}
+
+int anzahlFelder = laenge();
+int[] haufen = new int[anzahlFelder];
+
+int zaehle(){
+	int anzahl = 0;
+	while(kornDa()){
+		nimm();
+		anzahl++;
+	}
+	return anzahl;
+}
+
+void walk(int max){
+	for (int i = 0; i < max; i++){
+   		if(vornFrei()){
+   			vor();
+   		}
+   	}
+}
+
+void kehrt(){
+	linksUm();
+	linksUm();
+}
+void geben(int koerner){
+	for (int i = 0; i < koerner; i++){
+		gib();
+	} 
+} 
+
+int laenge(){
+	int anzahl = 1;
+	while(vornFrei()){
+		anzahl++;
+		walk(1);
+	}
+	kehrt();
+	walk(anzahl);
+	kehrt();
+	return anzahl;
+}
+
+void zaehleHaufen(){
+	for(int i = 0; i < anzahlFelder; i++){
+		haufen[i] = zaehle();
+		walk(1);
+	}
+	kehrt();
+	walk(anzahlFelder);
+	kehrt();
+}	
+
+void bringZurück(){
+	for(int i = 0; i < anzahlFelder; i++){
+		if (haufen[i] == 0){
+			walk(1);
+		}
+		else{
+			geben(haufen[i]);
+			walk(1);
+		}
+	}
+}

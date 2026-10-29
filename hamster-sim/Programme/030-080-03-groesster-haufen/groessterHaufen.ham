@@ -1,0 +1,43 @@
+/*imperative program*/void main() {
+    checkForBiggest();
+}
+int checkForBiggest(){
+	int posGrösste = 0;
+	int pos = 0;
+	while (vornFrei()){
+		vor();
+		pos++;
+		if(kornDa()){
+			int anzahl = zaehle();
+			int grössere = compare(anzahl, posGrösste);
+			if (grössere == anzahl){
+				posGrösste = grössere;
+			}
+			continue;
+		}
+	}
+	return posGrösste;
+}
+
+int zaehle(){
+	int anzahl = 0;
+	while(kornDa()){
+		nimm();
+		anzahl++;
+	}
+	gibAnzahl(anzahl);
+	return anzahl;
+}
+
+int compare(int first, int second){
+	if (first > second){
+		return first;
+	}
+	return second;
+}
+
+void gibAnzahl(int anzahl){
+	for (int i = 0; i < anzahl; i++){
+		gib();
+	}
+}
